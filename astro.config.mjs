@@ -6,6 +6,7 @@ import obfuscatorPlugin from "vite-plugin-javascript-obfuscator";
 
 export default defineConfig({
   site: 'info.celerisys.com',
+  base: "/",
   //site: 'https://celerisys.github.io',
   //base: "/Celerisys-Landing/",
   integrations: [tailwind(), react()],

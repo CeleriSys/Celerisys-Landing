@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 import obfuscatorPlugin from "vite-plugin-javascript-obfuscator";
 
 export default defineConfig({
+  site: 'https://celerisys.github.io',
   base: "/Celerisys-Landing/",
   integrations: [tailwind(), react()],
   output: "static",

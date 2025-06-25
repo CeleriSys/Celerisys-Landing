@@ -1,0 +1,49 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-secondary-900/80 transition-colors py-4">
+  <Container class="flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center space-x-2">
+      <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2.303 0A2.298 2.298 0 0 0 0 2.303v19.394A2.298 2.298 0 0 0 2.303 24h19.394A2.298 2.298 0 0 0 24 21.697V2.303A2.298 2.298 0 0 0 21.697 0zm8.177 3.072c4.098 0 7.028 1.438 7.68 1.764l-1.194 2.55c-2.442-1.057-4.993-1.41-5.672-1.41-1.574 0-2.17.922-2.17 1.763v8.494c0 .869.596 1.791 2.17 1.791.679 0 3.23-.38 5.672-1.41l1.194 2.496c-.435.271-3.637 1.818-7.68 1.818-1.112 0-4.64-.244-4.64-4.64V7.713c0-4.397 3.528-4.64 4.64-4.64z" />
+      </svg>
+      <span class="text-xl font-bold text-secondary-900 dark:text-white">CeleriSys</span>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-8">
+            <a href="/" class=`text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white ${currentPath === "about" ? "underline underline-offset-4" : ""}`>Inicio</a>
+      <a href="/about" class=`text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white ${currentPath === "about" ? "underline underline-offset-4" : ""}`>Nosotros</a>
+      <a href="/blog" class=`text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white ${currentPath === "contact" ? "underline underline-offset-4" : ""}`>Noticias</a>
+    </nav>
+
+    <div class="flex items-center space-x-4">
+      <button id="theme-toggle" class="p-2 rounded-md hover:bg-secondary-100 dark:hover:bg-secondary-800" aria-label="Cambiar tema">
+        <svg class="w-5 h-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+        <svg class="w-5 h-5 hidden dark:block text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+        </svg>
+      </button>
+    </div>
+  </Container>
+</header>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+
+  themeToggle?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // Inicializa tema si está configurado o si el usuario prefiere dark mode
+  if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+</script>

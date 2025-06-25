@@ -1,108 +1,123 @@
-<footer class="w-full py-12 border-t border-[#ffffff10]">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
-      
-      <!-- Redes sociales -->
-      <div class="flex flex-col lg:items-start items-center space-y-6 gap-9">
-        <div class="flex space-x-6 sm:space-x-8">
-          {
-            [
-              {
-                href: "",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>',                label: "GitHub",
-              },
-              {
-                href: "",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path></svg>',                label: "LinkedIn",
-              },
-              {
-                href: "",
-                icon: '<svg xmlns="http://www.w3.org/2000/svg" width="2.1em" height="2.1em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"/></svg>',                label: "Correo",
-              },
-            ].map((link) => (
-              <a
-                href={link.href}
-                target="_blank"
-                class="flex flex-col items-center group"
-                aria-label={link.label}
-              >
-                <div class="text-[var(--white-icon)] hover:text-[var(--white)] transition duration-300 ease-in-out">
-                  <div set:html={link.icon} />
-                </div>
-              </a>
-            ))
-          }
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+
+const navigation = {
+  producto: [
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Tecnologías', href: '#tecnologia' },
+    { name: 'Proyectos', href: '#proyectos' },
+  ],
+  empresa: [
+    { name: 'Sobre Nosotros', href: '#nosotros' },
+    { name: 'Equipo', href: '#equipo' },
+    { name: 'Colabora', href: '#colabora' },
+  ],
+  recursos: [
+    { name: 'Documentación', href: '#' },
+    { name: 'Soporte', href: '#' },
+  ],
+  legal: [
+    { name: 'Política de Privacidad', href: '#' },
+    { name: 'Términos y Condiciones', href: '#' },
+    { name: 'Seguridad', href: '#' },
+    { name: 'Cookies', href: '#' },
+  ],
+  redes: [
+    {
+      name: 'Twitter',
+      href: '#',
+  icon: `<path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>`
+    },
+    {
+      name: 'GitHub',
+      href: '#',
+      icon: '<path fill-rule="evenodd" d="M18.906.614a3.4 3.4 0 0 0-.896.127c-.955.262-1.824.76-2.646 1.302a13.7 13.7 0 0 0-6.807-.002A11 11 0 0 0 6.71 1.016C6.136.78 5.526.585 4.899.622c-.113.01-.263.013-.315.135a5.8 5.8 0 0 0-.422 1.737 4.8 4.8 0 0 0 .223 1.923 5.4 5.4 0 0 0-1.36 3.053c-.05.453-.036.91-.015 1.365-.934-.237-1.93-.278-2.867-.035-.11.025-.174.16-.128.261.036.092.146.14.238.111.912-.232 1.881-.177 2.783.074q.045.412.107.821c-.798-.196-1.635-.093-2.42.11-.14.033-.18.238-.071.328.083.08.205.04.303.015.74-.18 1.536-.258 2.275-.027.072.248.13.5.226.741l.316.715c.321.63.806 1.167 1.365 1.596a6.8 6.8 0 0 0 1.73.942c.727.277 1.49.449 2.258.571a3.3 3.3 0 0 0-.376.498 3.2 3.2 0 0 0-.335.795c-.43.007-.865.05-1.288-.045a1.95 1.95 0 0 1-.864-.452 3.6 3.6 0 0 1-.62-.739 1 1 0 0 0-.618-.43.73.73 0 0 0-.57.11.67.67 0 0 0-.256.406c-.051.221-.011.452.059.665.122.365.351.687.626.954.485.467 1.089.799 1.726 1.006.535.17 1.112.257 1.667.143-.003.99.003 1.979-.003 2.968-.024.232-.134.45-.28.628-.1.128-.23.231-.377.301-.128.056-.268.102-.362.212a.43.43 0 0 0-.097.422.41.41 0 0 0 .265.25c.148.05.306.039.46.036.45-.013.907-.1 1.306-.318.55-.294.95-.897.925-1.532-.002-.679-.022-1.357-.032-2.036-.003-.385-.018-.771.016-1.155.028 1.009.034 2.019.054 3.028.002.324-.001.654-.09.97a1.8 1.8 0 0 1-.365.682c-.098.12-.226.22-.295.362-.06.114-.07.26.001.37.084.143.254.197.409.22.33.041.657-.073.95-.218a2.16 2.16 0 0 0 .86-.783c.209-.338.308-.736.316-1.13.01-.584.008-1.167.017-1.75.035-.297.021-.596.028-.894.005.175.003.35.004.525-.027.534-.003 1.07-.004 1.604.01.31-.013.624.049.93.062.324.195.636.398.897.234.3.551.53.902.678.294.123.63.204.943.105.156-.044.296-.18.3-.35.003-.169-.105-.312-.22-.427a1.87 1.87 0 0 1-.524-1.36V18.47c.004-.27-.012-.54.014-.809.049.405.034.814.033 1.22.004.733-.003 1.466.004 2.2.015.41.18.822.48 1.108.346.337.824.5 1.295.565q.36.05.719.026c.182-.016.37-.137.408-.324.039-.176-.059-.355-.2-.457-.093-.075-.215-.095-.318-.153-.292-.16-.5-.451-.588-.77-.045-.138-.022-.284-.028-.426.001-.89-.007-1.782.008-2.672.483.097.983.043 1.455-.084a4.6 4.6 0 0 0 1.794-.94c.334-.29.618-.651.761-1.073.068-.205.11-.426.068-.641a.7.7 0 0 0-.233-.414.72.72 0 0 0-.583-.137 1 1 0 0 0-.632.431c-.206.314-.445.612-.744.841a1.9 1.9 0 0 1-.718.346c-.43.103-.876.059-1.314.051a3.9 3.9 0 0 0-.72-1.269c-.032-.022.018-.042.036-.041 1.228-.18 2.453-.528 3.514-1.188a5.15 5.15 0 0 0 1.638-1.593 3 3 0 0 0 .21-.383c.096-.214.203-.423.285-.644a8 8 0 0 0 .218-.725c.661-.228 1.38-.193 2.057-.057q.187.037.375.084c.07.017.154.017.21-.036.104-.084.073-.278-.054-.323-.81-.218-1.677-.314-2.5-.104a9 9 0 0 0 .109-.792c0-.031.038-.032.06-.041.903-.252 1.874-.306 2.788-.073.12.038.227-.057.263-.165v-.037c-.031-.073-.074-.156-.16-.173-.956-.246-1.971-.197-2.92.052.038-.68.033-1.37-.125-2.037a5.5 5.5 0 0 0-1.251-2.399c.386-1.133.283-2.39-.134-3.499-.04-.105-.07-.249-.204-.27q-.15-.03-.3-.032" />'
+    },
+    {
+      name: 'Instagram',
+      href: '#',
+  icon: `<path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>`
+    }
+  ]
+};
+---
+<footer class="bg-white dark:bg-secondary-900 border-t border-secondary-200 dark:border-secondary-800">
+  <Container>
+    <div class="py-12 md:py-16 grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div class="col-span-2">
+        <div class="flex items-center space-x-2">
+          <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.303 0A2.298 2.298 0 0 0 0 2.303v19.394A2.298 2.298 0 0 0 2.303 24h19.394A2.298 2.298 0 0 0 24 21.697V2.303A2.298 2.298 0 0 0 21.697 0zm8.177 3.072c4.098 0 7.028 1.438 7.68 1.764l-1.194 2.55c-2.442-1.057-4.993-1.41-5.672-1.41-1.574 0-2.17.922-2.17 1.763v8.494c0 .869.596 1.791 2.17 1.791.679 0 3.23-.38 5.672-1.41l1.194 2.496c-.435.271-3.637 1.818-7.68 1.818-1.112 0-4.64-.244-4.64-4.64V7.713c0-4.397 3.528-4.64 4.64-4.64z"></path>
+          </svg>
+          <span class="text-xl font-bold text-secondary-900 dark:text-white">Celerisys</span>
         </div>
+        <p class="mt-4 text-secondary-600 dark:text-secondary-400 max-w-md">
+          Soluciones web inteligentes y a tu medida. Aplicaciones modernas, despliegues optimizados y soporte continuo.
+        </p>
+
       </div>
 
-      <!-- Tecnologías utilizadas -->
-      <div class="flex flex-col items-center space-y-6">
-        <div class="grid grid-cols-1 gap-3 w-full max-w-xs py-6">
-          {
-            [
-              {
-                desc: "Desarrollado con",
-                name: "Astro",
-                icon: "/svg/astro.svg",
-                alt: "Logo de Astro",
-              },
-              {
-                desc: "Estilizado con",
-                name: "TailwindCSS",
-                icon: "/svg/tailwindcss.svg",
-                alt: "Logo de TailwindCSS",
-              },
-              {
-                desc: "Alojado en",
-                name: "Vercel",
-                icon: "/svg/vercel.svg",
-                alt: "Logo de Vercel",
-              },
-            ].map((tech) => (
-              <div class="flex items-center justify-center lg:justify-normal space-x-3">
-                <span class="text-[var(--white-icon)] text-sm">
-                  {tech.desc}
-                </span>
-                <img
-                  src={tech.icon}
-                  alt={tech.alt}
-                  class="h-5 w-5 object-contain filter brightness-0 invert opacity-50"
-                  loading="lazy"
-                />
-                <span class="text-[var(--white-icon)] text-sm">
-                  {tech.name}
-                </span>
-              </div>
-            ))
-          }
-        </div>
+      <div>
+        <h3 class="text-sm font-semibold text-secondary-900 dark:text-white">Producto</h3>
+        <ul class="mt-4 space-y-3">
+          {navigation.producto.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white">{item.name}</a>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <!-- Playlist o contenido adicional -->
-      <div class="flex flex-col items-center lg:items-start space-y-6">
-        <div class="w-full max-w-xs">
-          <iframe
-            style="border-radius:12px; border:0;"
-            src="https://open.spotify.com/embed/playlist/6pwLJTZOe0NCcl1T15yC1c?utm_source=generator"
-            class="w-full h-40"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
+      <div>
+        <h3 class="text-sm font-semibold text-secondary-900 dark:text-white">Empresa</h3>
+        <ul class="mt-4 space-y-3">
+          {navigation.empresa.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white">{item.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-secondary-900 dark:text-white">Recursos</h3>
+        <ul class="mt-4 space-y-3">
+          {navigation.recursos.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white">{item.name}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
 
-    <!-- Derechos de autor -->
-    <footer class="text-[10px] text-[var(--white-icon)] text-center opacity-40 hover:opacity-70 transition-all mt-12 mb-4">
-  <p>
-    Copyright © 2025 Oscar Hernandez
-  </p>
-  <br>
-    <p>
-    Copyright © 2025 Celerisys
-  </p>
-</footer>
-
-  </div>
+    <div class="py-6 border-t border-secondary-200 dark:border-secondary-800">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex space-x-6">
+          {navigation.redes.map((item) => (
+            <a
+              href={item.href}
+              class="text-secondary-500 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white"
+            >
+              <span class="sr-only">{item.name}</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <Fragment set:html={item.icon} />
+              </svg>
+            </a>
+          ))}
+        </div>
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-secondary-600 dark:text-secondary-400">
+          {navigation.legal.map((item) => (
+            <a href={item.href} class="hover:text-secondary-900 dark:hover:text-white">
+              {item.name}
+            </a>
+          ))}
+        </div>
+        <p class="text-sm text-secondary-600 dark:text-secondary-400">
+          &copy; {new Date().getFullYear()} Celerisys
+        </p>
+      </div>
+    </div>
+  </Container>
 </footer>

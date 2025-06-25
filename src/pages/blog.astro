@@ -1,0 +1,85 @@
+---
+// Layout y componentes
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Entradas del blog
+const posts = [
+  {
+    title: '¿Qué es una landing page y por qué tu negocio necesita una?',
+    excerpt: 'Descubre cómo una página de aterrizaje bien diseñada puede convertir visitantes en clientes potenciales.',
+    author: 'Byron Manchego',
+    date: '2024-05-18',
+    image: 'https://demo-files.netlify.app/astro-saas/blog-1.jpg',
+    category: 'Diseño Web'
+  },
+  {
+    title: 'Optimización de VPS: consejos para un hosting rápido y seguro',
+    excerpt: 'Aprende cómo configuramos servidores para garantizar velocidad, estabilidad y protección en producción.',
+    author: 'Jefferson Coaquira',
+    date: '2024-05-22',
+    image: 'https://demo-files.netlify.app/astro-saas/blog-2.jpg',
+    category: 'DevOps & VPS'
+  },
+  {
+    title: 'Automatización con GitHub Actions en proyectos web',
+    excerpt: 'Implementa despliegues continuos y pruebas automáticas como los profesionales.',
+    author: 'Jorge Manzano',
+    date: '2024-05-25',
+    image: 'https://demo-files.netlify.app/astro-saas/blog-3.jpg',
+    category: 'Automatización'
+  }
+];
+---
+
+<Layout title="Blog - CeleriSys">
+  <main class="pt-32">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        <h1 class="text-4xl sm:text-5xl font-bold text-secondary-900 dark:text-white mb-6">
+          Novedades y Consejos de Desarrollo Web
+        </h1>
+        <p class="text-lg text-secondary-600 dark:text-secondary-400">
+          Explora artículos sobre diseño, automatización y servidores para mejorar tu presencia digital.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {posts.map(post => (
+          <article class="bg-white dark:bg-secondary-800 rounded-xl shadow-lg overflow-hidden animate-on-scroll">
+            <img
+              src={post.image}
+              alt={post.title}
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-sm text-primary-600 dark:text-primary-400 mb-2">
+                {post.category}
+              </div>
+              <h2 class="text-xl font-semibold text-secondary-900 dark:text-white mb-2">
+                {post.title}
+              </h2>
+              <p class="text-secondary-600 dark:text-secondary-400 mb-4">
+                {post.excerpt}
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-secondary-600 dark:text-secondary-400">
+                  Por {post.author}
+                </span>
+                <span class="text-sm text-secondary-600 dark:text-secondary-400">
+                  {new Date(post.date).toLocaleDateString('es-PE', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Container>
+  </main>
+</Layout>

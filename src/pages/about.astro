@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+
+const team = [
+  {
+    name: "Adriano Gongora",
+    role: "CEO & Co-fundador",
+    image: "https://i.pravatar.cc/300?img=11",
+    bio: "Apasionado por crear negocios digitales sólidos y escalables. Estratega de productos web.",
+  },
+  {
+    name: "Byron Manchego",
+    role: "CTO & Co-fundador",
+    image: "https://i.pravatar.cc/300?img=13",
+    bio: "Especialista en Angular y Astro. Convierte ideas en interfaces rápidas y accesibles.",
+  },
+  {
+    name: "Jefferson Coaquira",
+    role: "COO & Co-fundador",
+    image: "https://i.pravatar.cc/300?img=12",
+    bio: "15 años de experiencia en infraestructura Linux, Docker y despliegue en la nube.",
+  },
+  {
+    name: "Jorge Manzano",
+    role: "Desarrollador Full Stack",
+    image: "https://i.pravatar.cc/300?img=14",
+    bio: "Automatiza pipelines con GitHub Actions y mantiene los VPS al máximo rendimiento y seguro.",
+  },
+];
+---
+
+<Layout title="Sobre Nosotros - CeleriSys">
+  <main class="pt-32">
+    <Container>
+      <!-- Misión -->
+      <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        <h1
+          class="text-4xl sm:text-5xl font-bold text-secondary-900 dark:text-white mb-6"
+        >
+          Nuestra Misión
+        </h1>
+        <p class="text-lg text-secondary-600 dark:text-secondary-400">
+          Impulsar negocios con soluciones web inteligentes, robustas y pensadas
+          para crecer.
+        </p>
+      </div>
+
+      <!-- Historia -->
+      <div class="grid md:grid-cols-2 gap-16 mb-24">
+        <div class="animate-on-scroll">
+          <h2
+            class="text-3xl font-bold text-secondary-900 dark:text-white mb-6"
+          >
+            Nuestra Historia
+          </h2>
+          <div
+            class="prose dark:prose-invert text-secondary-900 dark:text-white"
+          >
+            <p>
+              CeleriSys nació en 2023 cuando Adriano y Byron vieron cómo las
+              pymes peruanas batallaban con sitios lentos y servidores mal
+              configurados. Su meta fue clara: llevar estándares de <em
+                >software</em
+              > de clase mundial a proyectos locales.
+            </p>
+            <p>
+              Hoy diseñamos desde <strong>landing pages</strong> ultra-rápidas hasta
+              plataformas SaaS completas, con despliegue continuo y servidores VPS
+              optimizados. Cada línea de código está pensada para rendimiento, seguridad
+              y escalabilidad.
+            </p>
+          </div>
+        </div>
+        <div class="relative animate-on-scroll">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-secondary-500 rounded-3xl opacity-20 blur-3xl"
+          >
+          </div>
+          <img
+            src="/office.jpg"
+            alt="Oficina CeleriSys"
+            class="relative rounded-3xl shadow-2xl"
+          />
+        </div>
+      </div>
+
+      <!-- Equipo -->
+      <div class="mb-24">
+        <h2
+          class="text-3xl font-bold text-secondary-900 dark:text-white text-center mb-16 animate-on-scroll"
+        >
+          Conoce al Equipo
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            team.map((member) => (
+              <div class="text-center animate-on-scroll">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 class="text-xl font-semibold text-secondary-900 dark:text-white mb-2">
+                  {member.name}
+                </h3>
+                <p class="text-primary-600 dark:text-primary-400 mb-2">
+                  {member.role}
+                </p>
+                <p class="text-secondary-600 dark:text-secondary-400">
+                  {member.bio}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>

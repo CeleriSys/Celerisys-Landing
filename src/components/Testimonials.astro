@@ -1,0 +1,64 @@
+---
+import Container from './Container.astro';
+
+const testimonials = [
+  {
+    quote: "Con CeleriSys logramos migrar todo nuestro sistema a una plataforma web moderna sin perder funcionalidad. El soporte fue impecable.",
+    author: "Andrea Paredes",
+    role: "Directora de TI",
+    company: "Clinilab Perú",
+    image: "https://i.pravatar.cc/100?img=10"
+  },
+  {
+    quote: "Nuestro e-commerce incrementó su velocidad y estabilidad tras implementar su arquitectura. Además, ahora podemos escalar sin miedo.",
+    author: "Jorge Campos",
+    role: "CEO",
+    company: "Mercado Andino",
+    image: "https://i.pravatar.cc/100?img=12"
+  },
+  {
+    quote: "CeleriSys diseñó nuestro sistema de reservas desde cero. Se integró con nuestro servidor y dominio en VPS, y funciona 24/7 sin caídas.",
+    author: "Lucía Velasco",
+    role: "Cofundadora",
+    company: "RunaHostal",
+    image: "https://i.pravatar.cc/100?img=8"
+  }
+];
+---
+
+<section id="testimonials" class="py-24 bg-white dark:bg-secondary-900">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <h2 class="text-3xl sm:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
+        Clientes que confían en CeleriSys
+      </h2>
+      <p class="text-lg text-secondary-600 dark:text-secondary-400">
+Estas son algunas empresas que usan nuestras soluciones personalizadas para operar mejor.      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-secondary-50 dark:bg-secondary-800 rounded-xl p-8 animate-on-scroll">
+          <div class="flex items-center mb-6">
+            <img
+              src={testimonial.image}
+              alt={testimonial.author}
+              class="w-12 h-12 rounded-full"
+            />
+            <div class="ml-4">
+              <div class="font-semibold text-secondary-900 dark:text-white">
+                {testimonial.author}
+              </div>
+              <div class="text-sm text-secondary-600 dark:text-secondary-400">
+                {testimonial.role}, {testimonial.company}
+              </div>
+            </div>
+          </div>
+          <blockquote class="text-secondary-600 dark:text-secondary-400">
+            "{testimonial.quote}"
+          </blockquote>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

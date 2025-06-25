@@ -6,7 +6,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<Header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-secondary-900/80 transition-colors py-4">
+<header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-secondary-900/80 transition-colors py-4">
   <Container class="flex h-16 items-center justify-between">
     <a href="/" class="flex items-center space-x-2">
       <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
@@ -32,7 +32,7 @@ const currentPath = pathname.slice(1);
       </button>
     </div>
   </Container>
-</Header>
+</header>
 
 <script>
   const themeToggle = document.getElementById('theme-toggle');

@@ -1,0 +1,23 @@
+
+> celerisys-landingpage@0.0.1 dev
+> astro dev --host 127.0.0.1
+
+[2m16:27:56[22m [34m[types][39m Generated [2m2ms[22m
+[2m16:27:56[22m [34m[content][39m Syncing content
+[2m16:27:56[22m [34m[content][39m Astro config changed
+[2m16:27:56[22m [34m[content][39m Clearing content store
+[2m16:27:56[22m [34m[content][39m Synced content
+[2m16:27:56[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+
+[42m[1m astro [22m[49m [32mv5.18.1[39m [2mready in[22m 1678 [2mms[22m
+
+[2m┃[22m Local    [36mhttp://127.0.0.1:4321/[39m
+
+[2m16:27:56[22m [32mwatching for file changes...[39m
+[2m16:28:25[22m [34m[200][39m / [2m358ms[22m
+[2m16:28:25[22m [34m[200][39m / [2m373ms[22m
+[2m16:28:38[22m [34m[200][39m / [2m21ms[22m
+[2m16:31:39[22m [34m[watch][39m src/layouts/Layout.astro
+[2m16:31:39[22m [34m[200][39m / [2m86ms[22m
+[2m16:31:43[22m [34m[watch][39m /src/components/Footer.astro?astro&type=style&index=0&lang.css
+[2m16:31:43[22m [34m[watch][39m /src/components/Footer.astro?astro&type=style&index=0&lang.css

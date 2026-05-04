@@ -2,10 +2,14 @@
 ---
 
 <nav class="nav-header">
-  <a class="nlogo" href="/">
+  <a class="nlogo" href="#top">
     <img src="/svg/c.svg" alt="Celerisys" class="logo-icon">
     Celerisys
   </a>
+  <button id="menu-toggle" class="menu-btn" aria-label="Abrir menú" aria-expanded="false" type="button">
+    <span></span>
+    <span></span>
+  </button>
   <ul class="nlinks">
     <li><a href="#what">Qué hacemos</a></li>
     <li><a href="#method">Método</a></li>
@@ -50,7 +54,7 @@ nav.nav-header {
   border-bottom:1px solid var(--border2);
   transform:translateY(-100%);
   animation:navIn .6s var(--ease) 4.6s forwards;
-  transition:background-color 0.3s ease;
+  transition:background-color 0.3s ease, box-shadow .3s ease;
 }
 
 @keyframes navIn{to{transform:none}}
@@ -101,6 +105,38 @@ html.light .logo-icon {
   gap:16px;
 }
 
+.menu-btn {
+  display:none;
+  width:40px;
+  height:40px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:rgba(14,90,156,.08);
+  color:var(--white);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:6px;
+  padding:0;
+}
+
+.menu-btn span {
+  width:18px;
+  height:2px;
+  border-radius:999px;
+  background:currentColor;
+  transition:transform .25s ease;
+}
+
+.nav-header.open .menu-btn span:first-child {
+  transform:translateY(4px) rotate(45deg);
+}
+
+.nav-header.open .menu-btn span:last-child {
+  transform:translateY(-4px) rotate(-45deg);
+}
+
 .theme-btn {
   width:40px;
   height:40px;
@@ -117,7 +153,7 @@ html.light .logo-icon {
 }
 
 .theme-btn:hover {
-  background:rgba(81,112,255,.1);
+  background:rgba(14,90,156,.1);
   border-color:var(--blue);
 }
 
@@ -158,13 +194,104 @@ html.light .moon-icon {
 
 .ncta:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 28px rgba(81,112,255,.45);
+  box-shadow:0 8px 28px rgba(14,90,156,.45);
+}
+
+@media(max-width:860px) {
+  nav.nav-header {
+    height:64px;
+    padding:0 16px;
+  }
+
+  .nlogo {
+    font-size:18px;
+    min-width:0;
+  }
+
+  .logo-icon {
+    width:28px;
+    height:28px;
+  }
+
+  .menu-btn {
+    display:flex;
+    order:3;
+    margin-left:14px;
+  }
+
+  .nav-actions {
+    margin-left:auto;
+    gap:10px;
+    order:2;
+  }
+
+  .ncta {
+    display:none;
+  }
+
+  .nlinks {
+    position:absolute;
+    top:calc(100% + 10px);
+    left:16px;
+    right:16px;
+    display:grid;
+    gap:6px;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--nav-bg);
+    box-shadow:0 18px 44px rgba(0,0,0,.22), 0 0 28px rgba(14,90,156,.12);
+    backdrop-filter:blur(20px);
+    transform:translateY(-10px);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
+  }
+
+  .nav-header.open .nlinks {
+    transform:none;
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .nlinks a {
+    display:flex;
+    min-height:42px;
+    align-items:center;
+    padding:0 12px;
+    border-radius:8px;
+    color:var(--white);
+    background:rgba(14,90,156,.06);
+  }
+
+  .nlinks a:hover {
+    background:rgba(14,90,156,.12);
+  }
+}
+
+@media(max-width:390px) {
+  .nlogo {
+    font-size:16px;
+    gap:8px;
+  }
+
+  .theme-btn,
+  .menu-btn {
+    width:38px;
+    height:38px;
+  }
+
+  .menu-btn {
+    margin-left:10px;
+  }
 }
 </style>
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.nav-header');
 
   if (themeToggle) {
     themeToggle.addEventListener('click', function() {
@@ -180,7 +307,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function() {
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    nav.querySelectorAll('.nlinks a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+  }
 });
 </script>
-
 

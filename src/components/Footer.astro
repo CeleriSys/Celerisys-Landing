@@ -5,17 +5,9 @@ const year = new Date().getFullYear();
 <footer class="footer-new">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a class="flogo" href="#top" aria-label="Ir al inicio">
-        <svg width="28" height="28" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-          <defs>
-            <radialGradient id="flg" cx="38%" cy="38%" r="62%">
-              <stop offset="0%" stop-color="#6080ff" />
-              <stop offset="100%" stop-color="#152e90" />
-            </radialGradient>
-          </defs>
-          <path d="M102 29 A52 52 0 1 0 102 91 L90 81 A40 40 0 1 1 90 39 Z" fill="url(#flg)" />
-        </svg>
-        <span>Celerisys</span>
+      <a class="nlogo" href="#top">
+        <img src="/svg/c.svg" alt="Celerisys" class="logo-icon">
+        Celerisys
       </a>
       <p>Software a medida y automatización para que tu operación avance sin depender de tareas manuales.</p>
     </div>
@@ -45,7 +37,7 @@ const year = new Date().getFullYear();
   z-index:1;
   border-top:1px solid var(--border2);
   background:
-    radial-gradient(ellipse 70% 90% at 50% 0%, rgba(107,95,255,.1), transparent 65%),
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgba(14,90,156,.1), transparent 65%),
     rgba(5,7,18,.42);
   padding:56px 40px 28px;
 }
@@ -63,7 +55,7 @@ const year = new Date().getFullYear();
   max-width:420px;
 }
 
-.flogo {
+.nlogo {
   display:inline-flex;
   align-items:center;
   gap:10px;
@@ -74,9 +66,11 @@ const year = new Date().getFullYear();
   color:var(--white);
 }
 
-.flogo svg {
+.logo-icon {
+  width:28px;
+  height:28px;
   flex:0 0 auto;
-  filter:drop-shadow(0 0 16px rgba(107,95,255,.45));
+  filter:drop-shadow(0 0 16px rgba(14,90,156,.45));
 }
 
 .footer-brand p {
@@ -122,19 +116,19 @@ const year = new Date().getFullYear();
   min-height:40px;
   padding:0 18px;
   border-radius:8px;
-  background:linear-gradient(135deg,#6B5FFF,#4642D6);
+  background:linear-gradient(135deg,#0E5A9C,#083B6F);
   color:#fff;
   font-family:var(--font-h);
   font-size:13px;
   font-weight:600;
   text-decoration:none;
-  box-shadow:0 10px 28px rgba(107,95,255,.28);
+  box-shadow:0 10px 28px rgba(14,90,156,.28);
   transition:transform .2s, box-shadow .2s;
 }
 
 .footer-button:hover {
   transform:translateY(-2px);
-  box-shadow:0 14px 34px rgba(107,95,255,.38);
+  box-shadow:0 14px 34px rgba(14,90,156,.38);
 }
 
 .footer-bottom {
@@ -151,7 +145,7 @@ const year = new Date().getFullYear();
 
 html.light .footer-new {
   background:
-    radial-gradient(ellipse 70% 90% at 50% 0%, rgba(81,112,255,.07), transparent 65%),
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgba(14,90,156,.07), transparent 65%),
     rgba(255,255,255,.72);
 }
 

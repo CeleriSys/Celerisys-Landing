@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
   <div id="intro">
     <canvas id="vc"></canvas>
     <div id="ilogo">
-      <img src="/logo-1-a.png" alt="Celerisys" class="intro-logo" style="width:110px; height:110px; border-radius:20px; box-shadow: 0 0 40px rgba(107,95,255,.6); object-fit: cover;">
+      <img src="/svg/c.svg" alt="Celerisys" class="intro-logo" style="box-shadow: 0 0 40px rgba(14,90,156,.6);">
       <div id="iword">Celerisys</div>
       <div id="itag">Software que trabaja mientras tú descansas</div>
     </div>
@@ -18,8 +18,8 @@ import Layout from '../layouts/Layout.astro';
     <div id="hbg"></div>
     <div class="mountain-bg">
       <svg width="100%" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" fill="none">
-        <polygon points="0,300 380,300 720,55 1060,300 1440,300" fill="rgba(107,95,255,.04)"/>
-        <polygon points="180,300 480,300 720,105 960,300 1260,300" fill="rgba(107,95,255,.06)"/>
+        <polygon points="0,300 380,300 720,55 1060,300 1440,300" fill="rgba(14,90,156,.04)"/>
+        <polygon points="180,300 480,300 720,105 960,300 1260,300" fill="rgba(14,90,156,.06)"/>
         <polygon points="675,55 720,22 765,55 748,72 692,72" fill="rgba(255,255,255,.08)"/>
         <polygon points="697,55 720,22 743,55" fill="rgba(255,255,255,.18)"/>
       </svg>
@@ -176,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="reveal fb" style="text-align:center;margin-top:48px;">
-        <div style="display:inline-block;padding:20px 36px;background:rgba(107,95,255,.08);border:1px solid var(--border);border-radius:12px;max-width:640px;">
+        <div style="display:inline-block;padding:20px 36px;background:rgba(14,90,156,.08);border:1px solid var(--border);border-radius:12px;max-width:640px;">
           <p style="font-family:var(--font-h);font-size:17px;font-weight:600;margin-bottom:8px;">No somos una agencia de software más.</p>
           <p style="font-size:15px;color:var(--muted);line-height:1.65;">Somos el equipo técnico que tu negocio siempre necesitó y nunca tuvo. La diferencia es que entendemos tu operación antes de escribir una sola línea de código.</p>
         </div>
@@ -198,7 +198,7 @@ import Layout from '../layouts/Layout.astro';
           En pocas semanas empezamos a recuperar <strong>miles de soles que antes se nos escapaban</strong> sin darnos cuenta."
         </p>
         <div class="tauthor">
-          <img class="tauthor-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" id="delypapaAvatar" alt="Delypapa">
+          <img class="tauthor-img" src="/delypapalogo.png" id="delypapaAvatar" alt="Delypapa">
           <div>
             <div class="tauthor-name">Equipo Delypapa</div>
             <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
@@ -223,7 +223,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="bben">Primeros resultados visibles en semanas</div>
             <div class="bben">Sin contratos largos ni letras pequeñas</div>
           </div>
-          <div style="margin-top:28px;padding:18px 20px;background:rgba(107,95,255,.08);border:1px solid var(--border);border-radius:10px;">
+          <div style="margin-top:28px;padding:18px 20px;background:rgba(14,90,156,.08);border:1px solid var(--border);border-radius:10px;">
             <div style="font-family:var(--font-h);font-size:13px;font-weight:600;color:var(--blue-light);margin-bottom:6px;">📍 Google Meet · Zona horaria Perú (PET)</div>
             <div style="font-size:13px;color:var(--muted);line-height:1.6;">Reuniones de 1 hora. Elige el día y horario que mejor te convenga en el calendario.</div>
           </div>
@@ -232,7 +232,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="reveal fr">
           <div class="cal-panel">
             <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/jefferson-coaquira-tecsup" style="min-width:320px;height:700px;"></div>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/celerisys" style="height:700px;"></div>
             <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             <!-- Calendly inline widget end -->
           </div>
@@ -248,7 +248,7 @@ import Layout from '../layouts/Layout.astro';
   position:fixed;
   inset:0;
   z-index:9999;
-  background:#0F0F23;
+  background:#061827;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -274,7 +274,17 @@ import Layout from '../layouts/Layout.astro';
   flex-direction:column;
   align-items:center;
   gap:18px;
+  width:min(86vw, 560px);
+  text-align:center;
   animation:iIn 1s var(--ease) .4s both;
+}
+
+.intro-logo {
+  width:clamp(74px, 18vw, 110px) !important;
+  height:clamp(74px, 18vw, 110px) !important;
+  border-radius:clamp(14px, 3vw, 20px) !important;
+  filter:brightness(0) invert(1);
+  object-fit:contain;
 }
 
 @keyframes iIn {
@@ -288,7 +298,7 @@ import Layout from '../layouts/Layout.astro';
   font-weight:700;
   letter-spacing:-.03em;
   color:#fff;
-  text-shadow:0 0 40px rgba(107,95,255,.9);
+  text-shadow:0 0 40px rgba(14,90,156,.9);
   animation:iWord 1s var(--ease) 1.3s both;
 }
 
@@ -299,10 +309,12 @@ import Layout from '../layouts/Layout.astro';
 
 #itag {
   font-family:var(--font-b);
-  font-size:15px;
-  color:rgba(185,195,255,.65);
-  letter-spacing:.14em;
+  font-size:clamp(11px, 3.1vw, 15px);
+  color:rgba(125,183,232,.72);
+  letter-spacing:.11em;
   text-transform:uppercase;
+  line-height:1.55;
+  max-width:min(86vw, 560px);
   animation:iIn 1s var(--ease) 2.1s both;
 }
 
@@ -321,8 +333,8 @@ import Layout from '../layouts/Layout.astro';
   position:absolute;
   inset:0;
   background:
-    radial-gradient(ellipse 80% 55% at 50% 115%,rgba(107,95,255,.22) 0%,transparent 65%),
-    radial-gradient(ellipse 100% 35% at 50% 100%,rgba(43,78,222,.13) 0%,transparent 60%),
+    radial-gradient(ellipse 80% 55% at 50% 115%,rgba(14,90,156,.22) 0%,transparent 65%),
+    radial-gradient(ellipse 100% 35% at 50% 100%,rgba(8,59,111,.14) 0%,transparent 60%),
     #0b0d13;
 }
 
@@ -349,7 +361,7 @@ import Layout from '../layouts/Layout.astro';
   text-transform:uppercase;
   color:var(--blue-light);
   margin-bottom:26px;
-  background:rgba(107,95,255,.08);
+  background:rgba(14,90,156,.08);
   animation:iIn .8s var(--ease) 4.9s both;
 }
 
@@ -365,6 +377,43 @@ import Layout from '../layouts/Layout.astro';
 
 @keyframes blink {
   50% { opacity:.25 }
+}
+
+@media(max-width:640px) {
+  #hero {
+    min-height:100svh;
+    padding:96px 18px 64px;
+  }
+
+  .mountain-bg svg {
+    min-width:760px;
+    transform:translateX(-18%);
+  }
+
+  .hlabel {
+    max-width:100%;
+    white-space:normal;
+    justify-content:center;
+    line-height:1.45;
+    letter-spacing:.07em;
+  }
+
+  .hsub {
+    font-size:16px;
+    line-height:1.65;
+    margin:18px 0 30px;
+  }
+
+  .hact {
+    width:100%;
+  }
+
+  .hact .btn-p,
+  .hact .btn-g {
+    width:100%;
+    max-width:340px;
+    text-align:center;
+  }
 }
 
 h1 {
@@ -401,7 +450,7 @@ h1 {
 
 /* ── PAIN / HOOK ─────────────────────────────── */
 #pain {
-  background:rgba(107,95,255,.03);
+  background:rgba(14,90,156,.03);
 }
 
 .pain-grid {
@@ -483,8 +532,8 @@ h1 {
 .svc-ico {
   min-width:40px;
   height:40px;
-  background:rgba(107,95,255,.14);
-  border:1px solid rgba(107,95,255,.28);
+  background:rgba(14,90,156,.14);
+  border:1px solid rgba(14,90,156,.28);
   border-radius:9px;
   display:flex;
   align-items:center;
@@ -507,7 +556,7 @@ h1 {
 
 /* ── RESULTS / NUMBERS ───────────────────────── */
 #results {
-  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(107,95,255,.07),transparent 70%);
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(14,90,156,.07),transparent 70%);
 }
 
 .res-grid {
@@ -547,7 +596,7 @@ h1 {
 
 /* ── METHOD ──────────────────────────────────── */
 #method {
-  background:rgba(107,95,255,.025);
+  background:rgba(14,90,156,.025);
 }
 
 .steps {
@@ -577,7 +626,7 @@ h1 {
 .snum {
   width:44px;
   height:44px;
-  background:linear-gradient(135deg,#6B5FFF,#4642D6);
+  background:linear-gradient(135deg,#0E5A9C,#083B6F);
   border-radius:11px;
   display:flex;
   align-items:center;
@@ -587,7 +636,7 @@ h1 {
   font-weight:700;
   color:#fff;
   margin-bottom:18px;
-  box-shadow:0 6px 20px rgba(107,95,255,.35);
+  box-shadow:0 6px 20px rgba(14,90,156,.35);
 }
 
 .stname {
@@ -605,7 +654,7 @@ h1 {
 
 /* ── TESTIMONIAL ─────────────────────────────── */
 #testi {
-  background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(107,95,255,.09),transparent 70%);
+  background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(14,90,156,.09),transparent 70%);
 }
 
 .tcard {
@@ -667,7 +716,7 @@ h1 {
 
 /* ── BOOKING CALENDAR ────────────────────────── */
 #booking {
-  background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(107,95,255,.1),transparent 70%);
+  background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(14,90,156,.1),transparent 70%);
 }
 
 .book-wrap {
@@ -711,8 +760,8 @@ h1 {
   width:22px;
   height:22px;
   min-width:22px;
-  background:rgba(107,95,255,.2);
-  border:1px solid rgba(107,95,255,.4);
+  background:rgba(14,90,156,.2);
+  border:1px solid rgba(14,90,156,.4);
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -729,6 +778,11 @@ h1 {
   border-radius:20px;
   backdrop-filter:blur(24px);
   overflow:hidden;
+}
+
+.calendly-inline-widget {
+  width:100%;
+  min-width:0 !important;
 }
 
 .cal-header {
@@ -766,7 +820,7 @@ h1 {
 }
 
 .cal-nav button:hover {
-  background:rgba(107,95,255,.15);
+  background:rgba(14,90,156,.15);
   border-color:var(--blue);
 }
 
@@ -825,15 +879,15 @@ h1 {
 }
 
 .cal-day.available:hover {
-  background:rgba(107,95,255,.2);
-  border:1px solid rgba(107,95,255,.5);
+  background:rgba(14,90,156,.2);
+  border:1px solid rgba(14,90,156,.5);
   color:var(--blue-light);
 }
 
 .cal-day.selected {
   background:var(--blue);
   color:#fff !important;
-  box-shadow:0 4px 18px rgba(107,95,255,.5);
+  box-shadow:0 4px 18px rgba(14,90,156,.5);
   border:1px solid transparent;
 }
 
@@ -909,7 +963,7 @@ h1 {
 .tslot:hover {
   border-color:var(--blue);
   color:var(--blue-light);
-  background:rgba(107,95,255,.1);
+  background:rgba(14,90,156,.1);
 }
 
 .tslot.sel {
@@ -972,7 +1026,7 @@ h1 {
 .fg select:focus,
 .fg textarea:focus {
   border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(107,95,255,.14);
+  box-shadow:0 0 0 3px rgba(14,90,156,.14);
 }
 
 .fg select option {
@@ -993,6 +1047,54 @@ h1 {
   font-weight:500;
   color:var(--blue-light);
 }
+
+@media(max-width:640px) {
+  .inner {
+    padding:72px 18px;
+  }
+
+  .pain-grid,
+  .steps,
+  .res-grid {
+    grid-template-columns:1fr;
+    margin-top:36px;
+  }
+
+  #what .two,
+  .book-wrap {
+    gap:32px;
+    margin-top:36px;
+  }
+
+  .svc {
+    padding:18px 16px;
+  }
+
+  .tcard {
+    margin-top:36px;
+    padding:30px 20px;
+    border-radius:16px;
+  }
+
+  .book-benefits {
+    gap:10px;
+  }
+
+  .bben {
+    align-items:flex-start;
+    line-height:1.45;
+  }
+
+  .cal-panel {
+    border-radius:14px;
+    margin-left:-2px;
+    margin-right:-2px;
+  }
+
+  .calendly-inline-widget {
+    height:650px !important;
+  }
+}
 </style>
 
 <script is:inline>
@@ -1001,16 +1103,42 @@ window.addEventListener('DOMContentLoaded', () => {
 (function(){
   const canvas = document.getElementById('vc');
   const ctx = canvas.getContext('2d');
-  let W, H, t = 0;
-  function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+  let W, H, DPR, t = 0;
+  let stars = null;
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = innerWidth;
+    H = innerHeight;
+    canvas.width = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    stars = null;
+  }
   resize(); window.addEventListener('resize', resize);
 
   function rnd(a,b){ return a + Math.random()*(b-a); }
 
+  function volcanoMetrics(){
+    const scale = Math.min(W, H);
+    const mobile = W < 560;
+    const mx = W / 2;
+    const peakY = mobile ? H * .59 : H * .55;
+    const baseY = H + 8;
+    const halfBase = Math.min(W * (mobile ? .62 : .54), scale * (mobile ? .72 : .66));
+    const lowShoulder = Math.min(W * (mobile ? .42 : .36), scale * .46);
+    const highShoulder = Math.min(W * (mobile ? .25 : .22), scale * .28);
+    const crater = Math.max(42, Math.min(mobile ? 64 : 86, scale * .11));
+    const craterY = peakY + Math.max(8, scale * .018);
+    return {mx, peakY, baseY, halfBase, lowShoulder, highShoulder, crater, craterY, scale};
+  }
+
   class Ember {
     constructor(init){
-      this.x = W/2 + rnd(-25,25);
-      this.y = H*.52;
+      const v = volcanoMetrics();
+      this.x = v.mx + rnd(-v.crater * .45, v.crater * .45);
+      this.y = v.craterY;
       this.vx = rnd(-2.8,2.8);
       this.vy = rnd(-13,-4);
       this.life = 1;
@@ -1038,39 +1166,80 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   class Puff {
     constructor(){ this.reset(); }
-    reset(){ this.x=W/2+rnd(-35,35); this.y=H*.52; this.vx=rnd(-.7,.7); this.vy=rnd(-1.8,-.4); this.life=1; this.decay=rnd(.003,.007); this.r=rnd(18,55); this.a=rnd(.04,.11); }
+    reset(){
+      const v = volcanoMetrics();
+      this.x=v.mx+rnd(-v.crater*.7,v.crater*.7);
+      this.y=v.craterY+rnd(-4,8);
+      this.vx=rnd(-.7,.7);
+      this.vy=rnd(-1.8,-.4);
+      this.life=1;
+      this.decay=rnd(.003,.007);
+      this.r=rnd(18,55);
+      this.a=rnd(.04,.11);
+    }
     tick(){ this.x+=this.vx; this.y+=this.vy; this.r+=.7; this.life-=this.decay; if(this.life<=0)this.reset(); }
     draw(){ ctx.save(); ctx.globalAlpha=this.life*this.a; ctx.fillStyle='rgb(170,182,215)'; ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fill(); ctx.restore(); }
   }
 
   const embers = Array.from({length:130},(_,i)=>new Ember(i<80));
   const puffs  = Array.from({length:28},()=>new Puff());
-  let stars = null;
 
   function drawMtn(){
-    const mx=W/2, pk=H*.52;
+    const {mx, peakY, baseY, halfBase, lowShoulder, highShoulder, crater, craterY, scale} = volcanoMetrics();
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(0,H);
-    ctx.lineTo(mx-W*.38,H); ctx.lineTo(mx-W*.21,H*.73);
-    ctx.lineTo(mx-W*.11,H*.63); ctx.lineTo(mx-W*.04,pk+8);
-    ctx.lineTo(mx,pk);
-    ctx.lineTo(mx+W*.04,pk+8); ctx.lineTo(mx+W*.11,H*.63);
-    ctx.lineTo(mx+W*.21,H*.73); ctx.lineTo(mx+W*.38,H);
+    ctx.moveTo(mx-halfBase,baseY);
+    ctx.lineTo(mx-lowShoulder,H*.8);
+    ctx.lineTo(mx-highShoulder,H*.68);
+    ctx.lineTo(mx-crater*.92,craterY+12);
+    ctx.quadraticCurveTo(mx-crater*.48,peakY-4,mx-crater*.18,craterY+1);
+    ctx.quadraticCurveTo(mx,craterY+13,mx+crater*.18,craterY+1);
+    ctx.quadraticCurveTo(mx+crater*.48,peakY-4,mx+crater*.92,craterY+12);
+    ctx.lineTo(mx+highShoulder,H*.68);
+    ctx.lineTo(mx+lowShoulder,H*.8);
+    ctx.lineTo(mx+halfBase,baseY);
     ctx.closePath();
-    const g=ctx.createLinearGradient(mx,pk,mx,H);
-    g.addColorStop(0,'#0c1b3a'); g.addColorStop(.5,'#09112a'); g.addColorStop(1,'#050c1c');
+    const g=ctx.createLinearGradient(mx,peakY,mx,H);
+    g.addColorStop(0,'#123250'); g.addColorStop(.5,'#0a2038'); g.addColorStop(1,'#04101f');
     ctx.fillStyle=g; ctx.fill();
-    // snow
+
+    ctx.strokeStyle='rgba(125,183,232,.13)';
+    ctx.lineWidth=Math.max(1, scale * .003);
     ctx.beginPath();
-    ctx.moveTo(mx-38,pk+32); ctx.lineTo(mx-17,pk+4); ctx.lineTo(mx,pk);
-    ctx.lineTo(mx+17,pk+4); ctx.lineTo(mx+38,pk+32); ctx.closePath();
-    ctx.fillStyle='rgba(195,212,255,.2)'; ctx.fill();
-    // vent glow
+    ctx.moveTo(mx-crater*.75,craterY+18);
+    ctx.lineTo(mx-highShoulder*.72,H*.69);
+    ctx.lineTo(mx-lowShoulder*.55,H*.83);
+    ctx.moveTo(mx+crater*.7,craterY+20);
+    ctx.lineTo(mx+highShoulder*.82,H*.71);
+    ctx.lineTo(mx+lowShoulder*.62,H*.84);
+    ctx.stroke();
+
+    ctx.fillStyle='rgba(198,226,248,.16)';
+    ctx.beginPath();
+    ctx.moveTo(mx-crater*.9,craterY+16);
+    ctx.lineTo(mx-crater*.34,craterY+3);
+    ctx.lineTo(mx-crater*.08,craterY+12);
+    ctx.lineTo(mx-crater*.42,craterY+30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(mx+crater*.9,craterY+16);
+    ctx.lineTo(mx+crater*.34,craterY+3);
+    ctx.lineTo(mx+crater*.08,craterY+12);
+    ctx.lineTo(mx+crater*.42,craterY+30);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle='rgba(2,10,18,.72)';
+    ctx.beginPath();
+    ctx.ellipse(mx,craterY+7,crater*.54,crater*.18,0,0,Math.PI*2);
+    ctx.fill();
+
     const gs=.5+.5*Math.sin(t*.055);
-    const gv=ctx.createRadialGradient(mx,pk,0,mx,pk,75);
+    const glow = Math.max(58, Math.min(92, scale * .13));
+    const gv=ctx.createRadialGradient(mx,craterY,0,mx,craterY,glow);
     gv.addColorStop(0,`rgba(255,130,0,${.48*gs})`); gv.addColorStop(.5,`rgba(255,55,0,${.18*gs})`); gv.addColorStop(1,'transparent');
-    ctx.fillStyle=gv; ctx.beginPath(); ctx.arc(mx,pk,75,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle=gv; ctx.beginPath(); ctx.arc(mx,craterY,glow,0,Math.PI*2); ctx.fill();
     ctx.restore();
   }
 
@@ -1086,7 +1255,7 @@ window.addEventListener('DOMContentLoaded', () => {
     stars.forEach(s=>{ ctx.globalAlpha=s.a*(.4+.6*Math.sin(t*.025+s.x)); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill(); }); ctx.globalAlpha=1;
     // base glow
     const bg=ctx.createRadialGradient(W/2,H*.72,0,W/2,H*.72,W*.38);
-    bg.addColorStop(0,'rgba(107,95,255,.07)'); bg.addColorStop(1,'transparent');
+    bg.addColorStop(0,'rgba(14,90,156,.07)'); bg.addColorStop(1,'transparent');
     ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
     puffs.forEach(p=>{p.tick();p.draw();}); drawMtn(); embers.forEach(e=>{e.tick();e.draw();});
     requestAnimationFrame(loop);
@@ -1104,8 +1273,8 @@ window.addEventListener('DOMContentLoaded', () => {
   for(let i=0;i<55;i++) dots.push({x:Math.random()*1e4,y:Math.random()*1e4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.3+.4});
   function loop(){
     ctx.clearRect(0,0,W,H);
-    dots.forEach(d=>{ d.x+=d.vx; d.y+=d.vy; if(d.x<0)d.x=W; if(d.x>W)d.x=0; if(d.y<0)d.y=H; if(d.y>H)d.y=0; ctx.beginPath(); ctx.arc(d.x%W,d.y%H,d.r,0,Math.PI*2); ctx.fillStyle='rgba(107,95,255,.22)'; ctx.fill(); });
-    for(let i=0;i<dots.length;i++) for(let j=i+1;j<dots.length;j++){ const dx=(dots[i].x%W)-(dots[j].x%W),dy=(dots[i].y%H)-(dots[j].y%H),dist=Math.sqrt(dx*dx+dy*dy); if(dist<95){ ctx.beginPath(); ctx.moveTo(dots[i].x%W,dots[i].y%H); ctx.lineTo(dots[j].x%W,dots[j].y%H); ctx.strokeStyle=`rgba(107,95,255,${.055*(1-dist/95)})`; ctx.lineWidth=.5; ctx.stroke(); }}
+    dots.forEach(d=>{ d.x+=d.vx; d.y+=d.vy; if(d.x<0)d.x=W; if(d.x>W)d.x=0; if(d.y<0)d.y=H; if(d.y>H)d.y=0; ctx.beginPath(); ctx.arc(d.x%W,d.y%H,d.r,0,Math.PI*2); ctx.fillStyle='rgba(14,90,156,.22)'; ctx.fill(); });
+    for(let i=0;i<dots.length;i++) for(let j=i+1;j<dots.length;j++){ const dx=(dots[i].x%W)-(dots[j].x%W),dy=(dots[i].y%H)-(dots[j].y%H),dist=Math.sqrt(dx*dx+dy*dy); if(dist<95){ ctx.beginPath(); ctx.moveTo(dots[i].x%W,dots[i].y%H); ctx.lineTo(dots[j].x%W,dots[j].y%H); ctx.strokeStyle=`rgba(14,90,156,${.055*(1-dist/95)})`; ctx.lineWidth=.5; ctx.stroke(); }}
     requestAnimationFrame(loop);
   }
   loop();

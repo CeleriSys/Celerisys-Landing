@@ -22,7 +22,7 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Sans:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
     <title>{title}</title>
     <script is:inline>
       // Initialize theme on page load
@@ -40,7 +40,6 @@ const {
       <slot />
     </main>
     <Footer />
-    <canvas id="particles"></canvas>
     <a class="scroll-top" href="#top" aria-label="Subir al inicio" title="Subir al inicio">
       <span aria-hidden="true">↑</span>
     </a>
@@ -49,51 +48,68 @@ const {
 
 <style is:global>
 :root {
-  --blue: #0E5A9C;
-  --blue2: #083B6F;
-  --blue-light: #7DB7E8;
-  --surface: #061827;
-  --surface2: #0B2740;
-  --glass: rgba(8,44,78,0.55);
-  --white: #FFFFFF;
-  --muted: rgba(255,255,255,0.65);
-  --border: rgba(14,90,156,0.25);
-  --border2: rgba(14,90,156,0.15);
-  --green: #00e096;
-  --font-h: 'Space Grotesk', sans-serif;
-  --font-b: 'Manrope', sans-serif;
+  --nav-height:70px;
+  --blue: #6ca7ff;
+  --blue2: #397bd8;
+  --blue-light: #9bc5ff;
+  --surface: #050506;
+  --surface2: #101012;
+  --glass: rgba(18,18,21,.78);
+  --white: #f2f0f3;
+  --muted: #96939b;
+  --border: rgba(255,255,255,.14);
+  --border2: rgba(255,255,255,.08);
+  --green: #65d6a3;
+  --font-h: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-b: 'DM Sans', sans-serif;
   --ease: cubic-bezier(0.4,0,0.2,1);
-  --nav-bg: rgba(6,24,39,.84);
+  --nav-bg:rgba(27,29,34,.94);
+  --nav-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 32px rgba(0,0,0,.20);
   --text-primary: #ffffff;
   --text-secondary: rgba(255,255,255,0.65);
+  --card:#111114;
+  --card-elevated:#17171b;
+  --button-bg:#f2f0f3;
+  --button-text:#080809;
+  --page-shadow:0 32px 80px rgba(0,0,0,.34);
   /* Breakpoints (max-width, mobile-first overrides): sm ≤639px, md ≤767px, lg ≤1023px, xl ≤1279px */
 }
 
 /* Modo claro */
 html.light {
-  --surface: #ffffff;
-  --surface2: #f8f9fa;
-  --glass: rgba(255,255,255,0.7);
-  --blue-light: #0B4F86;
-  --white: #0A233A;
-  --muted: rgba(10,35,58,0.66);
-  --border: rgba(14,90,156,0.15);
-  --border2: rgba(14,90,156,0.08);
-  --nav-bg: rgba(255,255,255,.85);
-  --text-primary: #0A233A;
-  --text-secondary: rgba(10,35,58,0.66);
+  --blue:#0967c2;
+  --blue2:#074c91;
+  --blue-light:#07599f;
+  --surface:#f3f6fa;
+  --surface2:#ffffff;
+  --glass:rgba(255,255,255,.84);
+  --white:#0b2135;
+  --muted:#566879;
+  --border:rgba(11,33,53,.17);
+  --border2:rgba(11,33,53,.09);
+  --green:#087a55;
+  --nav-bg:rgba(226,231,237,.94);
+  --nav-shadow:0 1px 0 rgba(11,33,53,.10),0 10px 30px rgba(11,33,53,.08);
+  --text-primary:#0b2135;
+  --text-secondary:#566879;
+  --card:#ffffff;
+  --card-elevated:#eef3f8;
+  --button-bg:#0b2135;
+  --button-text:#ffffff;
+  --page-shadow:0 24px 60px rgba(11,33,53,.11);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-height);}
 
 body{
   background:var(--surface);
   color:var(--white);
   font-family:var(--font-b);
   overflow-x:hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:background-color .2s ease,color .2s ease;
+  -webkit-font-smoothing:antialiased;
 }
 
 main {
@@ -102,6 +118,10 @@ main {
 }
 
 section{position:relative;overflow:hidden;}
+
+@media(max-width:767px) {
+  :root { --nav-height:64px; }
+}
 
 #particles {
   position:fixed;

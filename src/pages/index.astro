@@ -1,67 +1,45 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
+
+const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 ---
 
 <Layout title="Celerisys — Software que trabaja mientras tú descansas">
-  <!-- ──────── INTRO VOLCANO ──────── -->
-  <div id="intro">
-    <canvas id="vc"></canvas>
-    <div id="ilogo">
-      <img src="/svg/c.svg" alt="Celerisys" class="intro-logo" style="box-shadow: 0 0 40px rgba(14,90,156,.6);">
-      <div id="iword">Celerisys</div>
-      <div id="itag">Software que trabaja mientras tú descansas</div>
-    </div>
-  </div>
-
   <!-- ──────── HERO ──────── -->
   <section id="hero">
     <div id="hbg"></div>
-    <div class="mountain-bg">
-      <svg width="100%" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" fill="none">
-        <polygon points="0,300 380,300 720,55 1060,300 1440,300" fill="rgba(14,90,156,.04)"/>
-        <polygon points="180,300 480,300 720,105 960,300 1260,300" fill="rgba(14,90,156,.06)"/>
-        <polygon points="675,55 720,22 765,55 748,72 692,72" fill="rgba(255,255,255,.08)"/>
-        <polygon points="697,55 720,22 743,55" fill="rgba(255,255,255,.18)"/>
-      </svg>
-    </div>
-    <div class="hlabel">Automatización & Software a medida · Arequipa, Perú</div>
-    <h1>¿Cuántas horas al día haces cosas que <span class="acc">una máquina podría hacer</span> por ti?</h1>
-    <p class="hsub">En Celerisys construimos el sistema que trabaja mientras tú descansas. Automatizamos, optimizamos y escalamos tu negocio — sin que tú tengas que empujarlo cada día.</p>
-    <div class="hact">
-      <a href="#booking" class="btn-p">Quiero que mi negocio trabaje solo</a>
-      <a href="#what" class="btn-g">Ver cómo lo hacemos</a>
-    </div>
-  </section>
-
-  <!-- ──────── PAIN POINTS ──────── -->
-  <section id="pain">
-    <div class="inner">
-      <div class="reveal fb" style="text-align:center;">
-        <span class="slabel">¿Te suena familiar?</span>
-        <h2 class="stitle" style="max-width:100%;text-align:center;">El problema no siempre es donde crees</h2>
-        <p class="sbody" style="max-width:600px;margin:12px auto 0;text-align:center;">La mayoría de dueños de negocio creen que el problema es el precio o el mercado.<br>Casi siempre, la fuga real está en otro lugar.</p>
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <div class="hlabel">Automatización & Software a medida · Arequipa, Perú</div>
+        <h1>Recupera las horas que hoy consume tu operación.</h1>
+        <p class="hsub">Construimos software que automatiza, ordena y escala tu negocio para que deje de depender de tareas manuales.</p>
+        <div class="hact">
+          <a href="#booking" class="btn-p">Quiero que mi negocio trabaje solo</a>
+          <a href="#what" class="btn-g">Ver cómo lo hacemos</a>
+        </div>
       </div>
-      <div class="pain-grid stg reveal fb">
-        <div class="pain-card">
-          <div class="pain-icon">🔥</div>
-          <div class="pain-q">"Trabajo 12 horas al día y sigo sin crecer"</div>
-          <div class="pain-a">Cuando el dueño es el cuello de botella, el negocio no puede escalar. Te liberamos de las tareas que frenan tu crecimiento.</div>
+      <div class="hero-preview" aria-label="Ejemplo de una operación automatizada">
+      <div class="preview-topbar">
+        <div class="preview-brand"><span class="preview-mark"></span>Panel operativo</div>
+        <div class="preview-status"><span></span>Todo funcionando</div>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-metric">
+          <span class="material-symbols-rounded" aria-hidden="true">schedule</span>
+          <div><small>Horas recuperadas</small><strong>18.5 h</strong></div>
+          <em>esta semana</em>
         </div>
-        <div class="pain-card">
-          <div class="pain-icon">📉</div>
-          <div class="pain-q">"Los números no me cierran y no sé por qué"</div>
-          <div class="pain-a">Muchas veces la fuga está en los procesos internos: errores manuales, retrabajos, información dispersa. Lo encontramos y lo tapamos.</div>
+        <div class="preview-metric">
+          <span class="material-symbols-rounded" aria-hidden="true">autorenew</span>
+          <div><small>Procesos automáticos</small><strong>390</strong></div>
+          <em>+24%</em>
         </div>
-        <div class="pain-card">
-          <div class="pain-icon">🔁</div>
-          <div class="pain-q">"Mi equipo repite lo mismo todos los días"</div>
-          <div class="pain-a">Si hay algo que se repite más de 3 veces a la semana, puede automatizarse. Tu equipo debería estar pensando, no ejecutando tareas mecánicas.</div>
+        <div class="preview-flow">
+          <span class="flow-dot"></span>
+          <div><strong>Pedido recibido</strong><small>Validado, facturado y asignado sin intervención manual</small></div>
+          <span class="flow-time">Hace 2 min</span>
         </div>
-        <div class="pain-card">
-          <div class="pain-icon">📦</div>
-          <div class="pain-q">"Crecemos, pero todo se desordena más"</div>
-          <div class="pain-a">Crecer sin sistemas es crecer caótico. Te damos la estructura tecnológica para que cada nuevo cliente o empleado sume, no reste.</div>
-        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -72,44 +50,37 @@ import Layout from '../layouts/Layout.astro';
       <div class="two">
         <div class="reveal fl">
           <span class="slabel">Qué hacemos</span>
-          <h2 class="stitle">No vendemos plantillas.<br>Construimos <span class="acc">tu solución exacta</span></h2>
-          <p class="sbody">No somos una agencia de software más. Somos el equipo técnico que tu negocio siempre necesitó y nunca tuvo. Cada sistema que construimos resuelve un problema real y específico de tu operación.</p>
+          <h2 class="stitle">Software diseñado alrededor de tu operación.</h2>
+          <p class="sbody">Entendemos dónde pierdes tiempo y construimos una solución concreta para automatizarlo.</p>
           <a href="#booking" class="btn-p" style="margin-top:28px;">Hablar con el equipo</a>
         </div>
         <div class="service-list stg reveal fr">
           <div class="svc">
-            <div class="svc-ico">⚙️</div>
+            <div class="svc-ico"><span class="material-symbols-rounded" aria-hidden="true">settings_suggest</span></div>
             <div>
               <div class="svc-name">Automatización de procesos</div>
-              <div class="svc-desc">Convertimos tareas repetitivas en flujos automáticos. Cotizaciones, facturas, reportes, seguimiento de clientes — todo sin que tu equipo lo toque.</div>
+              <div class="svc-desc">Cotizaciones, facturas, reportes y seguimientos que avanzan solos.</div>
             </div>
           </div>
           <div class="svc">
-            <div class="svc-ico">💻</div>
+            <div class="svc-ico"><span class="material-symbols-rounded" aria-hidden="true">deployed_code</span></div>
             <div>
               <div class="svc-name">Software hecho para tu negocio</div>
-              <div class="svc-desc">Sistemas de gestión, plataformas internas y aplicaciones diseñadas exactamente para cómo opera tu empresa. Sin funciones que no usas, sin límites que te frenan.</div>
+              <div class="svc-desc">Plataformas internas y aplicaciones adaptadas a tu forma de trabajar.</div>
             </div>
           </div>
           <div class="svc">
-            <div class="svc-ico">📊</div>
+            <div class="svc-ico"><span class="material-symbols-rounded" aria-hidden="true">monitoring</span></div>
             <div>
               <div class="svc-name">Visibilidad total de tu operación</div>
-              <div class="svc-desc">Dashboards en tiempo real, alertas automáticas y reportes que te dicen exactamente qué está pasando — sin tener que preguntar a nadie.</div>
+              <div class="svc-desc">Indicadores, alertas y reportes claros para decidir a tiempo.</div>
             </div>
           </div>
           <div class="svc">
-            <div class="svc-ico">🤖</div>
+            <div class="svc-ico"><span class="material-symbols-rounded" aria-hidden="true">neurology</span></div>
             <div>
               <div class="svc-name">Inteligencia artificial aplicada</div>
-              <div class="svc-desc">Chatbots que atienden 24/7, análisis predictivo, clasificación automática de clientes y mucho más. IA que genera resultados reales, no demos bonitas.</div>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc-ico">🚀</div>
-            <div>
-              <div class="svc-name">Escalar sin depender de ti</div>
-              <div class="svc-desc">Construimos sistemas que crecen solos: más clientes, más ventas, más pedidos — sin que tú tengas que trabajar el doble.</div>
+              <div class="svc-desc">IA aplicada a atención, clasificación y análisis de información.</div>
             </div>
           </div>
         </div>
@@ -120,27 +91,44 @@ import Layout from '../layouts/Layout.astro';
   <!-- ──────── RESULTS ──────── -->
   <section id="results">
     <div class="inner">
-      <div class="reveal fb" style="text-align:center;">
-        <span class="slabel">Resultados reales</span>
-        <h2 class="stitle" style="max-width:100%;text-align:center;">Números que hablan por sí solos</h2>
+      <div class="section-heading split-heading reveal fb">
+        <div>
+          <span class="slabel">Resultados</span>
+          <h2 class="stitle">Menos tareas.<br>Más negocio.</h2>
+        </div>
+        <p class="sbody">Medimos el impacto en lo que realmente importa: tiempo recuperado, velocidad operativa y capacidad para crecer.</p>
       </div>
-      <div class="res-grid stg reveal fb">
-        <div class="res-card">
+      <div class="results-bento stg reveal fb">
+        <article class="result-feature">
+          <span class="result-kicker">Eficiencia operativa</span>
           <div class="res-num">−70%</div>
           <div class="res-lbl">Reducción en tareas manuales</div>
-        </div>
-        <div class="res-card">
+          <div class="result-meter" aria-hidden="true"><span></span></div>
+          <p>El equipo deja de copiar, perseguir y corregir información para concentrarse en decisiones.</p>
+        </article>
+        <article class="res-card result-speed">
+          <span class="result-kicker">Velocidad</span>
           <div class="res-num">3×</div>
           <div class="res-lbl">Velocidad de operación promedio</div>
-        </div>
-        <div class="res-card">
-          <div class="res-num">+50</div>
+          <span class="result-note">Procesos que avanzan sin pausas</span>
+        </article>
+        <article class="res-card result-businesses">
+          <span class="result-kicker">Experiencia</span>
+          <div class="res-num">+4</div>
           <div class="res-lbl">Negocios transformados</div>
-        </div>
-        <div class="res-card">
-          <div class="res-num">Sem.</div>
-          <div class="res-lbl">Primeros resultados visibles</div>
-        </div>
+          <span class="result-note">Soluciones adaptadas a cada operación</span>
+        </article>
+        <article class="result-story reveal fb">
+          <div class="story-mark">“</div>
+          <p class="tquote">Celerisys encontró la fuga en nuestra operación. En pocas semanas empezamos a recuperar miles de soles que antes se escapaban sin darnos cuenta.</p>
+          <div class="tauthor">
+            <img class="tauthor-img" src="/delypapalogo.png" alt="Delypapa">
+            <div>
+              <div class="tauthor-name">Delypapa</div>
+              <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -148,61 +136,33 @@ import Layout from '../layouts/Layout.astro';
   <!-- ──────── METHOD ──────── -->
   <section id="method">
     <div class="inner">
-      <div class="reveal fb" style="text-align:center;">
-        <span class="slabel">Nuestro método</span>
-        <h2 class="stitle" style="max-width:100%;text-align:center;">Así trabajamos en Celerisys</h2>
-        <p class="sbody" style="max-width:560px;margin:12px auto 0;text-align:center;">Un proceso probado, sin suposiciones y orientado a resultados rápidos. No empezamos a construir hasta entender el problema real.</p>
-      </div>
-      <div class="steps stg reveal fb">
-        <div class="step">
-          <div class="snum">01</div>
-          <div class="stname">Entendemos tu negocio a fondo</div>
-          <div class="stxt">No asumimos nada. Preguntamos todo. Mapeamos cómo fluye tu operación hoy — quién hace qué, dónde se pierde tiempo y dinero, qué frena el crecimiento.</div>
-        </div>
-        <div class="step">
-          <div class="snum">02</div>
-          <div class="stname">Identificamos las fugas invisibles</div>
-          <div class="stxt">Detectamos los procesos que te están costando dinero sin que te des cuenta: retrabajos, errores manuales, cuellos de botella que parecen normales pero no lo son.</div>
-        </div>
-        <div class="step">
-          <div class="snum">03</div>
-          <div class="stname">Construimos la solución exacta</div>
-          <div class="stxt">Diseñamos y desarrollamos el sistema hecho para tu caso específico. Sin templates genéricos. Sin funciones que no usas. Solo lo que tu negocio necesita.</div>
-        </div>
-        <div class="step">
-          <div class="snum">04</div>
-          <div class="stname">Lo implementamos y lo dejamos corriendo</div>
-          <div class="stxt">Capacitamos a tu equipo, ajustamos hasta que todo funcione a la perfección y lo dejamos operando en piloto automático. Tú ves resultados en semanas, no en años.</div>
-        </div>
-      </div>
-      <div class="reveal fb method-callout-wrap">
-        <div class="method-callout">
-          <p class="method-callout-lead">No somos una agencia de software más.</p>
-          <p class="method-callout-text">Somos el equipo técnico que tu negocio siempre necesitó y nunca tuvo. La diferencia es que entendemos tu operación antes de escribir una sola línea de código.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ──────── TESTIMONIAL ──────── -->
-  <section id="testi">
-    <div class="inner">
-      <div class="reveal fb" style="text-align:center;">
-        <span class="slabel">Caso real</span>
-        <h2 class="stitle" style="max-width:100%;text-align:center;">Lo que descubres cuando miras adentro</h2>
-      </div>
-      <div class="tcard reveal fb">
-        <p class="tquote">
-          "Pensábamos que el problema era el precio o el mercado, porque los números no nos cerraban.
-          Al analizar la operación con Celerisys, descubrimos que la verdadera fuga estaba en el desorden interno.
-          En pocas semanas empezamos a recuperar <strong>miles de soles que antes se nos escapaban</strong> sin darnos cuenta."
-        </p>
-        <div class="tauthor">
-          <img class="tauthor-img" src="/delypapalogo.png" id="delypapaAvatar" alt="Delypapa">
-          <div>
-            <div class="tauthor-name">Equipo Delypapa</div>
-            <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
+      <div class="method-layout">
+        <div class="method-intro reveal fl">
+          <span class="slabel">Método</span>
+          <h2 class="stitle">De problema invisible a sistema funcionando.</h2>
+          <p class="sbody">Un proceso corto, transparente y enfocado en entregar valor desde el inicio.</p>
+          <div class="method-promise">
+            <span class="promise-dot" aria-hidden="true"></span>
+            <div><strong>Siempre sabrás qué sigue</strong><small>Alcance, avance y próximos pasos claros.</small></div>
           </div>
+        </div>
+        <div class="method-path stg reveal fr">
+          <article class="method-step">
+            <div class="method-index">01</div>
+            <div><span class="method-phase">Descubrir</span><h3>Entendemos tu operación</h3><p>Mapeamos tareas, responsables y puntos donde hoy se pierde tiempo.</p><span class="method-output">Resultado: mapa del proceso</span></div>
+          </article>
+          <article class="method-step">
+            <div class="method-index">02</div>
+            <div><span class="method-phase">Priorizar</span><h3>Encontramos la mejor oportunidad</h3><p>Elegimos el cambio que genera mayor impacto con el menor riesgo.</p><span class="method-output">Resultado: plan de solución</span></div>
+          </article>
+          <article class="method-step">
+            <div class="method-index">03</div>
+            <div><span class="method-phase">Construir</span><h3>Creamos y validamos contigo</h3><p>Desarrollamos por etapas para que puedas ver, probar y decidir.</p><span class="method-output">Resultado: software probado</span></div>
+          </article>
+          <article class="method-step">
+            <div class="method-index">04</div>
+            <div><span class="method-phase">Activar</span><h3>Lo dejamos trabajando</h3><p>Implementamos, capacitamos y acompañamos la puesta en marcha.</p><span class="method-output">Resultado: operación automatizada</span></div>
+          </article>
         </div>
       </div>
     </div>
@@ -213,29 +173,70 @@ import Layout from '../layouts/Layout.astro';
     <div class="inner">
       <div class="book-wrap">
         <div class="book-left reveal fl">
-          <span class="slabel">Agenda tu llamada</span>
-          <h2 class="stitle">1 Hora que puede cambiar tu negocio</h2>
-          <p class="sbody">Sin compromiso. Sin tecnicismos. Solo una conversación honesta sobre lo que está frenando tu crecimiento y cómo podemos resolverlo.</p>
+          <span class="slabel">Contacto</span>
+          <h2 class="stitle">Cuéntanos qué quieres mejorar.</h2>
+          <p class="sbody">Explícanos brevemente tu operación y te responderemos con el siguiente paso más conveniente.</p>
           <div class="book-benefits">
-            <div class="bben">Analizamos tu operación gratis en la llamada</div>
-            <div class="bben">Te decimos exactamente dónde está la fuga</div>
-            <div class="bben">Propuesta técnica y económica en 48 horas</div>
-            <div class="bben">Primeros resultados visibles en semanas</div>
-            <div class="bben">Sin contratos largos ni letras pequeñas</div>
+            <div class="bben">Primera evaluación sin costo</div>
+            <div class="bben">Respuesta personal, no automática</div>
+            <div class="bben">Sin compromiso ni llamadas innecesarias</div>
           </div>
           <div class="book-meta-box">
-            <div class="book-meta-label">📍 Google Meet · Zona horaria Perú (PET)</div>
-            <div class="book-meta-text">Reuniones de 1 hora. Elige el día y horario que mejor te convenga en el calendario.</div>
+            <div class="book-meta-label"><span class="material-symbols-rounded" aria-hidden="true">mail</span> Respuesta directa por correo</div>
+            <div class="book-meta-text">Revisamos cada solicitud y normalmente respondemos dentro de un día hábil.</div>
           </div>
         </div>
 
         <div class="reveal fr">
-          <div class="cal-panel">
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/celerisys" style="height:700px;"></div>
-            <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            <!-- Calendly inline widget end -->
-          </div>
+          <form id="contact-form" class="contact-panel" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value={web3formsAccessKey}>
+            <input type="hidden" name="subject" value="Nueva solicitud desde Celerisys">
+            <input type="hidden" name="from_name" value="Web Celerisys">
+            <input class="contact-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+
+            <div class="contact-form-head">
+              <span>Hablemos de tu operación</span>
+              <small>Todos los campos marcados son necesarios.</small>
+            </div>
+
+            <div class="contact-grid">
+              <label class="contact-field">
+                <span>Nombre *</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" required>
+              </label>
+              <label class="contact-field">
+                <span>Empresa *</span>
+                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio" required>
+              </label>
+              <label class="contact-field">
+                <span>Correo *</span>
+                <input type="email" name="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+              </label>
+              <label class="contact-field">
+                <span>WhatsApp</span>
+                <input type="tel" name="phone" autocomplete="tel" placeholder="+51 999 999 999">
+              </label>
+              <label class="contact-field contact-field-wide">
+                <span>¿Qué te gustaría mejorar? *</span>
+                <select name="priority" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="Automatizar tareas repetitivas">Automatizar tareas repetitivas</option>
+                  <option value="Ordenar información y reportes">Ordenar información y reportes</option>
+                  <option value="Crear software a medida">Crear software a medida</option>
+                  <option value="Aplicar inteligencia artificial">Aplicar inteligencia artificial</option>
+                  <option value="Aún no estoy seguro">Aún no estoy seguro</option>
+                </select>
+              </label>
+              <label class="contact-field contact-field-wide">
+                <span>Cuéntanos un poco más *</span>
+                <textarea name="message" rows="4" placeholder="¿Qué proceso te quita más tiempo hoy?" required></textarea>
+              </label>
+            </div>
+
+            <button class="contact-submit" type="submit">Solicitar evaluación gratuita</button>
+            <p class="contact-status" role="status" aria-live="polite"></p>
+            <p class="contact-privacy">Usaremos tus datos únicamente para responder esta solicitud.</p>
+          </form>
         </div>
       </div>
     </div>
@@ -243,207 +244,662 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style is:global>
-/* Overrides solo para esta página — breakpoints y layout responsive en Layout.astro */
-#intro {
-  background: #061827;
+/* Dirección visual inspirada en Stepbro: tipografía expresiva, negro neutro y movimiento mínimo. */
+.material-symbols-rounded {
+  font-family:'Material Symbols Rounded';
+  font-weight:normal;
+  font-style:normal;
+  font-size:22px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+#hero {
+  min-height:100svh;
+  display:block;
+  padding:clamp(104px,12vh,132px) max(24px,env(safe-area-inset-right,0px)) clamp(42px,6vh,64px) max(24px,env(safe-area-inset-left,0px));
+  text-align:left;
 }
 
 #hbg {
   background:
-    radial-gradient(ellipse 80% 55% at 50% 115%, rgba(14, 90, 156, 0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 100% 35% at 50% 100%, rgba(8, 59, 111, 0.14) 0%, transparent 60%),
-    #0b0d13;
+    radial-gradient(circle at 12% 18%,rgba(60,132,246,.18),transparent 34%),
+    radial-gradient(circle at 88% 20%,rgba(151,91,255,.11),transparent 32%),
+    radial-gradient(circle at 70% 88%,rgba(32,201,178,.08),transparent 30%),
+    var(--surface);
+}
+
+.hero-layout {
+  position:relative;
+  z-index:2;
+  width:min(100%,1240px);
+  min-height:calc(100svh - clamp(146px,18vh,196px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+  align-items:center;
+  gap:clamp(42px,6vw,88px);
+}
+
+.hero-copy { min-width:0; }
+
+.hlabel,
+h1,
+.hsub,
+.hact,
+nav.nav-header {
+  animation:none !important;
+  transform:none !important;
+}
+
+.hlabel {
+  margin-bottom:22px;
+  padding:7px 13px;
+  background:rgba(255,255,255,.035);
+  border-color:var(--border2);
+  color:var(--muted);
+  letter-spacing:.07em;
+  text-transform:none;
+}
+
+.hlabel::before {
+  width:6px;
+  height:6px;
+  box-shadow:none;
+  animation:none;
+}
+
+h1 {
+  max-width:720px;
+  font-size:clamp(48px,5.3vw,78px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+
+.acc { color:var(--white); }
+
+.hsub {
+  max-width:600px;
+  margin:24px 0 30px;
+  font-size:18px;
+  line-height:1.58;
+  text-wrap:balance;
+}
+
+.hact { justify-content:flex-start; }
+
+.btn-p,
+.btn-g {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 25px;
+  border-radius:999px;
+  font-size:15px;
+  transition:background-color .18s ease,border-color .18s ease,color .18s ease;
+}
+
+.btn-p {
+  background:var(--button-bg);
+  color:var(--button-text);
+  box-shadow:none;
+}
+
+.btn-p:hover {
+  transform:none;
+  filter:brightness(.92);
+  box-shadow:none;
+}
+
+.btn-p:active,
+.btn-g:active { transform:scale(.97);transition-duration:100ms; }
+
+.btn-g:hover {
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.22);
+  color:var(--white);
+}
+
+.hero-preview {
+  position:relative;
+  width:100%;
+  margin-top:0;
+  padding:18px;
+  text-align:left;
+  border:1px solid var(--border2);
+  border-radius:28px;
+  background:var(--glass);
+  backdrop-filter:blur(24px) saturate(150%);
+  box-shadow:var(--page-shadow);
+}
+
+.preview-topbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:44px;
+  padding:0 6px 14px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.preview-brand,
+.preview-status { display:flex;align-items:center;gap:9px; }
+.preview-mark { width:10px;height:10px;border-radius:3px;background:var(--blue); }
+.preview-status span { width:7px;height:7px;border-radius:50%;background:var(--green); }
+
+.preview-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.preview-metric,
+.preview-flow {
+  border:1px solid var(--border2);
+  background:var(--card-elevated);
+  border-radius:16px;
+}
+
+.preview-metric {
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  align-items:center;
+  gap:14px;
+  padding:22px;
+}
+
+.preview-metric>.material-symbols-rounded {
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:rgba(108,167,255,.11);
+  color:var(--blue-light);
+}
+
+.preview-metric div { display:flex;flex-direction:column;gap:3px; }
+.preview-metric small,.preview-flow small { color:var(--muted);font-size:12px; }
+.preview-metric strong { font-family:var(--font-h);font-size:24px;letter-spacing:-.03em; }
+.preview-metric em { color:var(--green);font-size:12px;font-style:normal; }
+
+.preview-flow {
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:14px;
+  padding:18px 22px;
+}
+
+.flow-dot { width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(101,214,163,.08); }
+.preview-flow div { display:flex;flex-direction:column;gap:4px; }
+.preview-flow strong { font-size:14px; }
+.flow-time { color:var(--muted);font-size:12px; }
+
+.reveal,
+.reveal.fl,
+.reveal.fr,
+.reveal.fb,
+.stg>*,
+.stg.vis>* {
+  opacity:1 !important;
+  transform:none !important;
+  transition:none !important;
+}
+
+#results {
+  background:
+    radial-gradient(circle at 92% 50%,rgba(151,91,255,.08),transparent 32%),
+    var(--surface2);
+}
+
+#what,#method,#booking {
+  background:linear-gradient(145deg,var(--surface) 0%,var(--surface2) 145%);
+}
+
+#what .inner,
+#results .inner,
+#method .inner,
+#booking .inner {
+  min-height:auto;
+  display:block;
+  padding-top:clamp(60px,8vh,76px);
+  padding-bottom:clamp(60px,8vh,76px);
+}
+
+#what .inner,
+#results .inner,
+#method .inner {
+  min-height:calc(100svh - var(--nav-height));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+#results .inner {
+  padding-top:clamp(44px,5vh,58px);
+  padding-bottom:clamp(44px,5vh,58px);
+}
+
+.slabel {
+  color:var(--blue-light);
+  letter-spacing:.08em;
+  text-transform:none;
+  font-size:12px;
+}
+
+.stitle {
+  font-size:clamp(36px,5.2vw,68px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+
+.sbody { color:var(--muted);line-height:1.65; }
+
+.pain-grid,.res-grid { gap:12px; }
+
+#what .two {
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(40px,5vw,72px);
+  margin-top:0;
+}
+
+.service-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.svc {
+  flex-direction:column;
+  gap:16px;
+  padding:20px;
+}
+
+.svc:last-child { grid-column:auto; }
+
+.pain-card,.svc,.res-card,.step,.tcard,.method-callout,.book-meta-box,.cal-panel,.contact-panel {
+  background:var(--card);
+  border:1px solid var(--border2);
+  backdrop-filter:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.04),var(--page-shadow);
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease;
+}
+
+.pain-card,.svc { border-radius:16px; }
+.pain-card:hover,.svc:hover { transform:none !important;border-color:var(--border) !important; }
+
+.pain-icon,.svc-ico {
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  margin-bottom:18px;
+  border:1px solid var(--border2);
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+  color:var(--blue-light);
+}
+
+.svc-ico { min-width:42px;margin-bottom:0; }
+.pain-q,.svc-name,.stname { font-family:var(--font-h);letter-spacing:-.015em; }
+.pain-a,.svc-desc,.stxt,.res-lbl,.tauthor-role { color:var(--muted); }
+
+.split-heading {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,.62fr);
+  align-items:end;
+  gap:clamp(36px,7vw,100px);
+}
+
+.split-heading .stitle { max-width:720px; }
+.split-heading .sbody { max-width:440px;padding-bottom:7px; }
+#results .split-heading .stitle { font-size:clamp(38px,4.4vw,60px); }
+
+.results-bento {
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:12px;
+  margin-top:38px;
+}
+
+.result-feature,.res-card,.result-story {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border2);
+  border-radius:20px;
+  background:var(--card);
+  box-shadow:0 1px 0 rgba(255,255,255,.04),var(--page-shadow);
+}
+
+.result-feature {
+  grid-column:span 6;
+  grid-row:span 2;
+  min-height:336px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:
+    radial-gradient(circle at 85% 5%,rgba(108,167,255,.22),transparent 38%),
+    linear-gradient(145deg,var(--card-elevated),var(--card));
+}
+
+.result-feature::after {
+  content:'';
+  position:absolute;
+  width:190px;height:190px;
+  right:-72px;top:-88px;
+  border:40px solid rgba(108,167,255,.08);
+  border-radius:50%;
+}
+
+.result-kicker,.method-phase {
+  color:var(--blue-light);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+
+.result-feature .res-num { font-size:clamp(58px,6.6vw,86px);line-height:.92;margin:26px 0 10px; }
+.result-feature .res-lbl { color:var(--white);font-size:16px;font-weight:600; }
+.result-feature>p { max-width:470px;margin-top:24px;color:var(--muted);font-size:14px;line-height:1.6; }
+
+.result-meter { height:7px;margin-top:22px;overflow:hidden;border-radius:999px;background:var(--border2); }
+.result-meter span { display:block;width:70%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue2),var(--blue-light)); }
+
+.res-card {
+  grid-column:span 3;
+  min-height:162px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.res-card .res-num { margin:12px 0 4px;color:var(--white);font-size:clamp(36px,3.8vw,52px);line-height:1; }
+.res-card .res-lbl { max-width:190px;font-size:14px;line-height:1.4; }
+.result-note { margin-top:18px;color:var(--muted);font-size:11px;line-height:1.4; }
+
+.result-story {
+  grid-column:7/-1;
+  min-height:162px;
+  padding:24px 28px;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:20px;
+  background:linear-gradient(135deg,rgba(101,214,163,.07),var(--card) 55%);
+}
+
+.story-mark { align-self:start;color:var(--green);font-family:Georgia,serif;font-size:60px;line-height:.8; }
+.result-story .tquote { margin:0;font-size:14px;line-height:1.55; }
+.result-story .tauthor { min-width:188px;flex-wrap:nowrap; }
+.result-story .tauthor-img { width:46px;height:46px; }
+
+.method-layout {
+  display:grid;
+  grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);
+  gap:clamp(52px,8vw,112px);
+  align-items:start;
+}
+
+.method-intro { position:sticky;top:130px; }
+.method-intro .stitle { margin-top:16px;font-size:clamp(40px,4.8vw,64px); }
+.method-intro .sbody { max-width:470px;margin-top:20px; }
+
+.method-promise {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:34px;
+  padding:17px 18px;
+  border:1px solid var(--border2);
+  border-radius:16px;
+  background:var(--card);
+}
+
+.promise-dot { width:10px;height:10px;flex:0 0 auto;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(101,214,163,.10); }
+.method-promise div { display:flex;flex-direction:column;gap:3px; }
+.method-promise strong { font-size:13px; }
+.method-promise small { color:var(--muted);font-size:12px; }
+
+.method-path { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px; }
+.method-step {
+  position:relative;
+  min-height:208px;
+  padding:20px;
+  overflow:hidden;
+  border:1px solid var(--border2);
+  border-radius:18px;
+  background:var(--card);
+  box-shadow:0 1px 0 rgba(255,255,255,.04),var(--page-shadow);
+}
+
+.method-index { margin-bottom:20px;color:var(--muted);font-family:var(--font-h);font-size:13px;font-weight:700;letter-spacing:.06em; }
+.method-step h3 { margin:8px 0 9px;font-family:var(--font-h);font-size:19px;line-height:1.15;letter-spacing:-.025em; }
+.method-step p { color:var(--muted);font-size:13px;line-height:1.55; }
+.method-output { display:inline-flex;margin-top:14px;padding:7px 10px;border-radius:999px;background:rgba(108,167,255,.09);color:var(--blue-light);font-size:10px;font-weight:700; }
+
+.book-wrap { margin-top:0;align-items:start; }
+
+.book-meta-label { display:flex;align-items:center;gap:8px; }
+.book-meta-label .material-symbols-rounded { font-size:18px;color:var(--blue-light); }
+
+.contact-panel {
+  padding:clamp(24px,3vw,34px);
+  border-radius:22px;
+}
+
+.contact-form-head { display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:24px; }
+.contact-form-head>span { font-family:var(--font-h);font-size:20px;font-weight:700;letter-spacing:-.02em; }
+.contact-form-head small { max-width:190px;color:var(--muted);font-size:11px;text-align:right; }
+.contact-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; }
+.contact-field { display:flex;flex-direction:column;gap:7px; }
+.contact-field-wide { grid-column:1/-1; }
+.contact-field>span { color:var(--muted);font-size:12px;font-weight:600; }
+.contact-field input,.contact-field select,.contact-field textarea {
+  width:100%;
+  min-height:46px;
+  padding:12px 14px;
+  border:1px solid var(--border2);
+  border-radius:11px;
+  outline:none;
+  background:var(--card-elevated);
+  color:var(--white);
+  font:inherit;
+  font-size:14px;
+  transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;
+}
+.contact-field textarea { min-height:100px;resize:vertical;line-height:1.5; }
+.contact-field input::placeholder,.contact-field textarea::placeholder { color:var(--muted);opacity:.72; }
+.contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus { border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,167,255,.13); }
+.contact-submit { width:100%;min-height:50px;margin-top:18px;border:0;border-radius:999px;background:var(--button-bg);color:var(--button-text);font-family:var(--font-h);font-size:14px;font-weight:700;cursor:pointer; }
+.contact-submit:disabled { cursor:wait;opacity:.65; }
+.contact-status { min-height:20px;margin-top:10px;color:var(--blue-light);font-size:12px;text-align:center; }
+.contact-status.is-error { color:#d25a5a; }
+.contact-status.is-success { color:var(--green); }
+.contact-privacy { color:var(--muted);font-size:10px;text-align:center; }
+.contact-honeypot { position:absolute !important;left:-9999px !important;opacity:0 !important; }
+
+@media(max-width:767px) {
+  #hero { padding-top:96px;padding-bottom:56px; }
+  .hero-layout { min-height:auto;grid-template-columns:1fr;gap:44px; }
+  h1 { font-size:clamp(40px,12vw,62px); }
+  .hsub { font-size:17px; }
+  .hero-preview { padding:12px;border-radius:20px; }
+  .preview-grid { grid-template-columns:1fr; }
+  .preview-flow { grid-column:auto;grid-template-columns:auto 1fr; }
+  .flow-time { display:none; }
+  .preview-metric { padding:17px; }
+  .split-heading { grid-template-columns:1fr;gap:18px; }
+  .results-bento { grid-template-columns:1fr;margin-top:30px; }
+  .result-feature,.res-card,.result-story { grid-column:auto;grid-row:auto; }
+  .result-feature { min-height:310px;padding:25px; }
+  .res-card { min-height:180px; }
+  .result-story { grid-template-columns:auto 1fr;padding:24px; }
+  .result-story .tauthor { grid-column:2;min-width:0; }
+  .method-layout { grid-template-columns:1fr;gap:34px; }
+  .method-intro { position:static; }
+  .method-path { grid-template-columns:1fr; }
+  .method-step { min-height:auto; }
+  .contact-grid { grid-template-columns:1fr; }
+  .contact-field-wide { grid-column:auto; }
+  .contact-form-head { align-items:flex-start;flex-direction:column;gap:6px; }
+  .contact-form-head small { max-width:none;text-align:left; }
+  #what .inner,
+  #results .inner,
+  #method .inner,
+  #booking .inner { padding-top:52px;padding-bottom:52px; }
+  #what .inner,
+  #results .inner,
+  #method .inner { min-height:auto;display:block; }
+}
+
+@media(max-width:1000px) {
+  #what .two { grid-template-columns:1fr; }
+  .service-list { grid-template-columns:1fr; }
+  .svc:last-child { grid-column:auto; }
+  .method-layout { grid-template-columns:1fr;gap:40px; }
+  .method-intro { position:static; }
+}
+
+@media(min-width:768px) and (max-width:1000px) {
+  .results-bento { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .result-feature { grid-column:1/-1;grid-row:auto; }
+  .res-card { grid-column:auto; }
+  .result-story { grid-column:1/-1; }
+}
+
+@media(min-width:768px) and (max-width:1100px) {
+  .hero-layout { grid-template-columns:1fr;gap:44px; }
+  .hero-copy { text-align:center; }
+  h1,.hsub { margin-left:auto;margin-right:auto; }
+  .hact { justify-content:center; }
+  .hero-preview { width:min(100%,760px);margin-inline:auto; }
+}
+
+/* Mantiene Resultados completo cuando el zoom reduce la altura CSS disponible. */
+@media(min-width:1001px) and (max-height:800px) {
+  #results .inner { padding-top:24px;padding-bottom:24px; }
+  #results .split-heading .stitle { font-size:clamp(40px,4vw,50px); }
+  #results .split-heading .sbody { font-size:14px;line-height:1.5; }
+  .results-bento { margin-top:22px; }
+  .result-feature { min-height:286px;padding:24px; }
+  .result-feature .res-num { margin-top:18px;font-size:clamp(54px,5.4vw,70px); }
+  .result-feature>p { margin-top:16px;font-size:12px; }
+  .result-meter { margin-top:16px; }
+  .res-card { min-height:132px;padding:18px; }
+  .res-card .res-num { font-size:clamp(34px,3.2vw,44px); }
+  .result-note { margin-top:10px; }
+  .result-story { min-height:142px;padding:18px 22px;gap:16px; }
+  .result-story .tquote { font-size:12px;line-height:1.45; }
+  .result-story .tauthor-img { width:40px;height:40px; }
+  .story-mark { font-size:48px; }
+
+  #booking .inner { padding-top:24px;padding-bottom:24px; }
+  #booking .book-wrap { gap:32px; }
+  #booking .book-benefits { margin-top:20px;gap:9px; }
+  #booking .book-meta-box { margin-top:20px;padding:14px 16px; }
+  .contact-panel { padding:20px 24px; }
+  .contact-form-head { margin-bottom:14px; }
+  .contact-grid { gap:10px 14px; }
+  .contact-field { gap:5px; }
+  .contact-field input,.contact-field select,.contact-field textarea { min-height:40px;padding:9px 12px;font-size:13px; }
+  .contact-field textarea { min-height:68px; }
+  .contact-submit { min-height:44px;margin-top:12px; }
+  .contact-status { min-height:16px;margin-top:6px; }
+}
+
+html.light #hbg {
+  background:
+    radial-gradient(circle at 12% 18%,rgba(9,103,194,.16),transparent 34%),
+    radial-gradient(circle at 88% 20%,rgba(118,84,190,.10),transparent 32%),
+    radial-gradient(circle at 72% 88%,rgba(13,151,136,.09),transparent 30%),
+    var(--surface);
+}
+
+html.light #results {
+  background:
+    radial-gradient(circle at 92% 50%,rgba(118,84,190,.09),transparent 32%),
+    var(--surface2);
+}
+
+html.light .hlabel { background:rgba(255,255,255,.66);border-color:rgba(17,17,20,.1); }
+html.light .btn-g:hover { background:rgba(17,17,20,.06);border-color:rgba(17,17,20,.22);color:var(--white); }
+html.light .pain-icon,
+html.light .svc-ico { background:#f1f5fa;border-color:rgba(18,103,196,.14); }
+html.light .hero-preview { border-color:rgba(255,255,255,.8); }
+
+@media(prefers-reduced-transparency:reduce) {
+  .hero-preview { background:var(--card);backdrop-filter:none; }
+}
+
+@media(prefers-contrast:more) {
+  .hero-preview,.pain-card,.svc,.result-feature,.res-card,.result-story,.method-step,.method-promise,.book-meta-box,.cal-panel,.contact-panel { border-color:var(--white); }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important; }
 }
 </style>
 
 <script is:inline>
-window.addEventListener('DOMContentLoaded', () => {
-/* ── VOLCANO INTRO ──────────────────────────────────────── */
-(function(){
-  const canvas = document.getElementById('vc');
-  const ctx = canvas.getContext('2d');
-  let W, H, DPR, t = 0;
-  let stars = null;
-  function resize(){
-    DPR = Math.min(window.devicePixelRatio || 1, 2);
-    W = innerWidth;
-    H = innerHeight;
-    canvas.width = Math.floor(W * DPR);
-    canvas.height = Math.floor(H * DPR);
-    canvas.style.width = W + 'px';
-    canvas.style.height = H + 'px';
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    stars = null;
-  }
-  resize(); window.addEventListener('resize', resize);
+  const contactForm = document.getElementById('contact-form');
+  const contactStatus = contactForm?.querySelector('.contact-status');
+  const contactButton = contactForm?.querySelector('.contact-submit');
 
-  function rnd(a,b){ return a + Math.random()*(b-a); }
+  contactForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    contactStatus?.classList.remove('is-error', 'is-success');
 
-  function volcanoMetrics(){
-    const scale = Math.min(W, H);
-    const mobile = W < 560;
-    const mx = W / 2;
-    const peakY = mobile ? H * .59 : H * .55;
-    const baseY = H + 8;
-    const halfBase = Math.min(W * (mobile ? .62 : .54), scale * (mobile ? .72 : .66));
-    const lowShoulder = Math.min(W * (mobile ? .42 : .36), scale * .46);
-    const highShoulder = Math.min(W * (mobile ? .25 : .22), scale * .28);
-    const crater = Math.max(42, Math.min(mobile ? 64 : 86, scale * .11));
-    const craterY = peakY + Math.max(8, scale * .018);
-    return {mx, peakY, baseY, halfBase, lowShoulder, highShoulder, crater, craterY, scale};
-  }
-
-  class Ember {
-    constructor(init){
-      const v = volcanoMetrics();
-      this.x = v.mx + rnd(-v.crater * .45, v.crater * .45);
-      this.y = v.craterY;
-      this.vx = rnd(-2.8,2.8);
-      this.vy = rnd(-13,-4);
-      this.life = 1;
-      this.decay = rnd(.009,.024);
-      this.r = rnd(3,8);
-      this.hue = rnd(12,48);
-      this.br = rnd(55,80);
-      if(init){ this.y = rnd(H*.25,H*.9); this.life = Math.random(); }
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
     }
-    tick(){
-      this.x += this.vx*.65; this.vy += .09; this.y += this.vy*.5;
-      this.life -= this.decay; this.r *= .994;
-      if(this.life <= 0){ Object.assign(this, new Ember(false)); }
+
+    const accessKey = contactForm.querySelector('[name="access_key"]')?.value;
+    if (!accessKey) {
+      contactStatus.textContent = 'Falta conectar el correo receptor de Web3Forms.';
+      contactStatus.classList.add('is-error');
+      return;
     }
-    draw(){
-      ctx.save(); ctx.globalAlpha = Math.max(0, this.life*.88);
-      const g = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r*2);
-      g.addColorStop(0,`hsl(${this.hue},100%,${this.br}%)`);
-      g.addColorStop(.5,`hsl(${this.hue},90%,${this.br-22}%)`);
-      g.addColorStop(1,'transparent');
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(this.x,this.y,this.r*2,0,Math.PI*2); ctx.fill();
-      ctx.restore();
+
+    contactButton.disabled = true;
+    contactButton.textContent = 'Enviando…';
+    contactStatus.textContent = '';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message || 'No se pudo enviar');
+
+      contactForm.reset();
+      contactStatus.textContent = 'Solicitud enviada. Te responderemos muy pronto.';
+      contactStatus.classList.add('is-success');
+    } catch (error) {
+      contactStatus.textContent = 'No pudimos enviar la solicitud. Inténtalo nuevamente.';
+      contactStatus.classList.add('is-error');
+    } finally {
+      contactButton.disabled = false;
+      contactButton.textContent = 'Solicitar evaluación gratuita';
     }
-  }
-  class Puff {
-    constructor(){ this.reset(); }
-    reset(){
-      const v = volcanoMetrics();
-      this.x=v.mx+rnd(-v.crater*.7,v.crater*.7);
-      this.y=v.craterY+rnd(-4,8);
-      this.vx=rnd(-.7,.7);
-      this.vy=rnd(-1.8,-.4);
-      this.life=1;
-      this.decay=rnd(.003,.007);
-      this.r=rnd(18,55);
-      this.a=rnd(.04,.11);
-    }
-    tick(){ this.x+=this.vx; this.y+=this.vy; this.r+=.7; this.life-=this.decay; if(this.life<=0)this.reset(); }
-    draw(){ ctx.save(); ctx.globalAlpha=this.life*this.a; ctx.fillStyle='rgb(170,182,215)'; ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fill(); ctx.restore(); }
-  }
-
-  const embers = Array.from({length:130},(_,i)=>new Ember(i<80));
-  const puffs  = Array.from({length:28},()=>new Puff());
-
-  function drawMtn(){
-    const {mx, peakY, baseY, halfBase, lowShoulder, highShoulder, crater, craterY, scale} = volcanoMetrics();
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(mx-halfBase,baseY);
-    ctx.lineTo(mx-lowShoulder,H*.8);
-    ctx.lineTo(mx-highShoulder,H*.68);
-    ctx.lineTo(mx-crater*.92,craterY+12);
-    ctx.quadraticCurveTo(mx-crater*.48,peakY-4,mx-crater*.18,craterY+1);
-    ctx.quadraticCurveTo(mx,craterY+13,mx+crater*.18,craterY+1);
-    ctx.quadraticCurveTo(mx+crater*.48,peakY-4,mx+crater*.92,craterY+12);
-    ctx.lineTo(mx+highShoulder,H*.68);
-    ctx.lineTo(mx+lowShoulder,H*.8);
-    ctx.lineTo(mx+halfBase,baseY);
-    ctx.closePath();
-    const g=ctx.createLinearGradient(mx,peakY,mx,H);
-    g.addColorStop(0,'#123250'); g.addColorStop(.5,'#0a2038'); g.addColorStop(1,'#04101f');
-    ctx.fillStyle=g; ctx.fill();
-
-    ctx.strokeStyle='rgba(125,183,232,.13)';
-    ctx.lineWidth=Math.max(1, scale * .003);
-    ctx.beginPath();
-    ctx.moveTo(mx-crater*.75,craterY+18);
-    ctx.lineTo(mx-highShoulder*.72,H*.69);
-    ctx.lineTo(mx-lowShoulder*.55,H*.83);
-    ctx.moveTo(mx+crater*.7,craterY+20);
-    ctx.lineTo(mx+highShoulder*.82,H*.71);
-    ctx.lineTo(mx+lowShoulder*.62,H*.84);
-    ctx.stroke();
-
-    ctx.fillStyle='rgba(198,226,248,.16)';
-    ctx.beginPath();
-    ctx.moveTo(mx-crater*.9,craterY+16);
-    ctx.lineTo(mx-crater*.34,craterY+3);
-    ctx.lineTo(mx-crater*.08,craterY+12);
-    ctx.lineTo(mx-crater*.42,craterY+30);
-    ctx.closePath();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(mx+crater*.9,craterY+16);
-    ctx.lineTo(mx+crater*.34,craterY+3);
-    ctx.lineTo(mx+crater*.08,craterY+12);
-    ctx.lineTo(mx+crater*.42,craterY+30);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle='rgba(2,10,18,.72)';
-    ctx.beginPath();
-    ctx.ellipse(mx,craterY+7,crater*.54,crater*.18,0,0,Math.PI*2);
-    ctx.fill();
-
-    const gs=.5+.5*Math.sin(t*.055);
-    const glow = Math.max(58, Math.min(92, scale * .13));
-    const gv=ctx.createRadialGradient(mx,craterY,0,mx,craterY,glow);
-    gv.addColorStop(0,`rgba(255,130,0,${.48*gs})`); gv.addColorStop(.5,`rgba(255,55,0,${.18*gs})`); gv.addColorStop(1,'transparent');
-    ctx.fillStyle=gv; ctx.beginPath(); ctx.arc(mx,craterY,glow,0,Math.PI*2); ctx.fill();
-    ctx.restore();
-  }
-
-  function loop(){
-    t++;
-    ctx.clearRect(0,0,W,H);
-    // sky
-    const sky=ctx.createLinearGradient(0,0,0,H);
-    sky.addColorStop(0,'#000408'); sky.addColorStop(.65,'#010e20'); sky.addColorStop(1,'#061220');
-    ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
-    // stars
-    if(!stars) stars=Array.from({length:220},()=>({x:Math.random()*W,y:Math.random()*H*.68,r:Math.random()*1.4+.3,a:Math.random()}));
-    stars.forEach(s=>{ ctx.globalAlpha=s.a*(.4+.6*Math.sin(t*.025+s.x)); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill(); }); ctx.globalAlpha=1;
-    // base glow
-    const bg=ctx.createRadialGradient(W/2,H*.72,0,W/2,H*.72,W*.38);
-    bg.addColorStop(0,'rgba(14,90,156,.07)'); bg.addColorStop(1,'transparent');
-    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-    puffs.forEach(p=>{p.tick();p.draw();}); drawMtn(); embers.forEach(e=>{e.tick();e.draw();});
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-/* ── PARTICLES BG ────────────────────────────────────────── */
-(function(){
-  const c=document.getElementById('particles');
-  const ctx=c.getContext('2d');
-  let W,H,dots=[];
-  function rs(){ W=c.width=innerWidth; H=c.height=innerHeight; }
-  rs(); window.addEventListener('resize',rs);
-  for(let i=0;i<55;i++) dots.push({x:Math.random()*1e4,y:Math.random()*1e4,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.3+.4});
-  function loop(){
-    ctx.clearRect(0,0,W,H);
-    dots.forEach(d=>{ d.x+=d.vx; d.y+=d.vy; if(d.x<0)d.x=W; if(d.x>W)d.x=0; if(d.y<0)d.y=H; if(d.y>H)d.y=0; ctx.beginPath(); ctx.arc(d.x%W,d.y%H,d.r,0,Math.PI*2); ctx.fillStyle='rgba(14,90,156,.22)'; ctx.fill(); });
-    for(let i=0;i<dots.length;i++) for(let j=i+1;j<dots.length;j++){ const dx=(dots[i].x%W)-(dots[j].x%W),dy=(dots[i].y%H)-(dots[j].y%H),dist=Math.sqrt(dx*dx+dy*dy); if(dist<95){ ctx.beginPath(); ctx.moveTo(dots[i].x%W,dots[i].y%H); ctx.lineTo(dots[j].x%W,dots[j].y%H); ctx.strokeStyle=`rgba(14,90,156,${.055*(1-dist/95)})`; ctx.lineWidth=.5; ctx.stroke(); }}
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-/* ── SCROLL REVEAL ────────────────────────────────────────── */
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); }});
-},{threshold:.1});
-document.querySelectorAll('.reveal,.stg').forEach(el=>obs.observe(el));
-
-});
+  });
 </script>

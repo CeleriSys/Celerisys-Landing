@@ -12,9 +12,9 @@
   </button>
   <ul class="nlinks">
     <li><a href="#what">Qué hacemos</a></li>
+    <li><a href="#results">Resultados</a></li>
     <li><a href="#method">Método</a></li>
-    <li><a href="#testi">Clientes</a></li>
-    <li><a href="#booking">Agendar</a></li>
+    <li><a href="#booking">Contacto</a></li>
   </ul>
   <div class="nav-actions">
     <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema" type="button">
@@ -33,7 +33,7 @@
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
     </button>
-    <a href="#booking" class="ncta">Agendar llamada gratuita</a>
+    <a href="#booking" class="ncta">Solicitar evaluación gratuita</a>
   </div>
 </nav>
 
@@ -50,10 +50,11 @@ nav.nav-header {
   align-items:center;
   justify-content:space-between;
   background:var(--nav-bg);
-  backdrop-filter:blur(20px);
+  backdrop-filter:blur(22px) saturate(160%);
   border-bottom:1px solid var(--border2);
-  transform:translateY(-100%);
-  animation:navIn .6s var(--ease) 4.6s forwards;
+  box-shadow:var(--nav-shadow);
+  transform:none;
+  animation:none;
   transition:background-color 0.3s ease, box-shadow .3s ease;
 }
 
@@ -83,7 +84,7 @@ html.light .logo-icon {
 
 .nlinks{
   display:flex;
-  gap:32px;
+  gap:clamp(14px,1.7vw,28px);
   list-style:none;
 }
 
@@ -110,8 +111,8 @@ html.light .logo-icon {
   width:40px;
   height:40px;
   border:1px solid var(--border);
-  border-radius:8px;
-  background:rgba(14,90,156,.08);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
   color:var(--white);
   cursor:pointer;
   align-items:center;
@@ -141,7 +142,7 @@ html.light .logo-icon {
   width:40px;
   height:40px;
   border:1px solid var(--border);
-  border-radius:8px;
+  border-radius:999px;
   background:transparent;
   color:var(--white);
   cursor:pointer;
@@ -153,8 +154,15 @@ html.light .logo-icon {
 }
 
 .theme-btn:hover {
-  background:rgba(14,90,156,.1);
-  border-color:var(--blue);
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.2);
+}
+
+.theme-btn:active,
+.menu-btn:active,
+.ncta:active {
+  transform:scale(.96);
+  transition-duration:100ms;
 }
 
 .theme-btn svg {
@@ -179,25 +187,35 @@ html.light .moon-icon {
 }
 
 .ncta{
-  padding:10px 22px;
-  background:var(--blue);
-  border:none;
-  border-radius:8px;
+  padding:10px 20px;
+  background:var(--button-bg);
+  border:1px solid var(--button-bg);
+  border-radius:999px;
   font-family:var(--font-h);
   font-size:13px;
   font-weight:600;
-  color:#fff;
+  color:var(--button-text);
   cursor:pointer;
   text-decoration:none;
-  transition:transform .2s,box-shadow .2s;
+  transition:background-color .18s ease,border-color .18s ease;
 }
 
 .ncta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 28px rgba(14,90,156,.45);
+  transform:none;
+  filter:brightness(.92);
 }
 
-@media(max-width:860px) {
+html.light .theme-btn:hover,
+html.light .menu-btn:hover {
+  background:rgba(17,17,20,.06);
+  border-color:rgba(17,17,20,.18);
+}
+
+@media(prefers-reduced-transparency:reduce) {
+  nav.nav-header { background:var(--surface);backdrop-filter:none; }
+}
+
+@media(max-width:1120px) {
   nav.nav-header {
     height:64px;
     padding:0 16px;

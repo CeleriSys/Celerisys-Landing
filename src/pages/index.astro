@@ -1,21 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const configuredWeb3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3forms'
+  ? ''
+  : configuredWeb3FormsKey;
 ---
 
-<Layout title="Celerisys — Software que trabaja mientras tú descansas">
+<Layout
+  title="Celerisys — Automatización y software a medida en Perú"
+  description="Automatizamos procesos y creamos software a medida para que empresas peruanas recuperen tiempo, reduzcan errores y crezcan con una operación más ordenada."
+>
   <!-- ──────── HERO ──────── -->
   <section id="hero">
     <div id="hbg"></div>
     <div class="hero-layout">
       <div class="hero-copy">
         <div class="hlabel">Automatización & Software a medida · Arequipa, Perú</div>
-        <h1>Recupera las horas que hoy consume tu operación.</h1>
-        <p class="hsub">Construimos software que automatiza, ordena y escala tu negocio para que deje de depender de tareas manuales.</p>
+        <h1>Automatizamos los procesos que hacen perder tiempo y dinero a tu empresa.</h1>
+        <p class="hsub">Creamos software a medida para centralizar información, reducir errores y hacer que tu operación avance sin depender de tareas manuales.</p>
         <div class="hact">
-          <a href="#booking" class="btn-p">Quiero que mi negocio trabaje solo</a>
-          <a href="#what" class="btn-g">Ver cómo lo hacemos</a>
+          <a href="#booking" class="btn-p">Solicitar diagnóstico gratuito</a>
+          <a href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio." class="btn-g" target="_blank" rel="noopener noreferrer" data-conversion="whatsapp-hero">Escribir por WhatsApp</a>
+        </div>
+        <div class="hero-assurance" aria-label="Ventajas del diagnóstico">
+          <span>Evaluación inicial sin costo</span>
+          <span>Respuesta en un día hábil</span>
+          <span>Sin compromiso</span>
         </div>
       </div>
       <div class="hero-preview" aria-label="Ejemplo de una operación automatizada">
@@ -100,11 +111,11 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
       </div>
       <div class="results-bento stg reveal fb">
         <article class="result-feature">
-          <span class="result-kicker">Eficiencia operativa</span>
+          <span class="result-kicker">Impacto observado</span>
           <div class="res-num">−70%</div>
           <div class="res-lbl">Reducción en tareas manuales</div>
           <div class="result-meter" aria-hidden="true"><span></span></div>
-          <p>El equipo deja de copiar, perseguir y corregir información para concentrarse en decisiones.</p>
+          <p>El equipo deja de copiar, perseguir y corregir información para concentrarse en decisiones. El resultado exacto depende de cada operación.</p>
         </article>
         <article class="res-card result-speed">
           <span class="result-kicker">Velocidad</span>
@@ -122,7 +133,7 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
           <div class="story-mark">“</div>
           <p class="tquote">Celerisys encontró la fuga en nuestra operación. En pocas semanas empezamos a recuperar miles de soles que antes se escapaban sin darnos cuenta.</p>
           <div class="tauthor">
-            <img class="tauthor-img" src="/delypapalogo.png" alt="Delypapa">
+            <img class="tauthor-img" src="/delypapalogo-optimized.png" width="256" height="256" loading="lazy" alt="Logo de Delypapa">
             <div>
               <div class="tauthor-name">Delypapa</div>
               <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
@@ -168,6 +179,46 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
     </div>
   </section>
 
+  <!-- ──────── FAQ ──────── -->
+  <section id="faq">
+    <div class="inner">
+      <div class="faq-layout">
+        <div class="faq-intro reveal fl">
+          <span class="slabel">Preguntas frecuentes</span>
+          <h2 class="stitle">Lo que necesitas saber antes de empezar.</h2>
+          <p class="sbody">No necesitas llegar con una solución definida. Empezamos entendiendo el problema y te recomendamos el siguiente paso más conveniente.</p>
+          <a href="#booking" class="btn-p">Cuéntanos tu caso</a>
+        </div>
+        <div class="faq-list reveal fr">
+          <details>
+            <summary>¿Cuánto cuesta desarrollar una solución?</summary>
+            <p>Depende del proceso, las integraciones y el alcance. Después del diagnóstico inicial recibirás una propuesta clara por etapas, sin costos ocultos.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tiempo demora?</summary>
+            <p>Priorizamos una primera entrega útil y luego avanzamos por etapas. El plazo se define contigo después de mapear el proceso y sus riesgos.</p>
+          </details>
+          <details>
+            <summary>¿Pueden trabajar con los sistemas que ya usamos?</summary>
+            <p>Sí. Evaluamos tus herramientas actuales y, cuando es viable, las conectamos para evitar duplicar información o reemplazar todo de golpe.</p>
+          </details>
+          <details>
+            <summary>¿Necesito saber exactamente qué software quiero?</summary>
+            <p>No. Puedes empezar contándonos qué tarea consume tiempo, dónde ocurren errores o qué información hoy no puedes ver a tiempo.</p>
+          </details>
+          <details>
+            <summary>¿Incluyen capacitación y soporte?</summary>
+            <p>Sí. La puesta en marcha contempla acompañamiento y capacitación. El soporte posterior se define según las necesidades de cada solución.</p>
+          </details>
+          <details>
+            <summary>¿Trabajan fuera de Arequipa?</summary>
+            <p>Sí. Atendemos empresas de otras ciudades de Perú de forma remota y coordinamos cada etapa con seguimiento claro.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ──────── BOOKING / CALENDAR ──────── -->
   <section id="booking">
     <div class="inner">
@@ -175,7 +226,7 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
         <div class="book-left reveal fl">
           <span class="slabel">Contacto</span>
           <h2 class="stitle">Cuéntanos qué quieres mejorar.</h2>
-          <p class="sbody">Explícanos brevemente tu operación y te responderemos con el siguiente paso más conveniente.</p>
+          <p class="sbody">Explícanos brevemente tu operación y te responderemos con el siguiente paso más conveniente. Completarlo toma menos de dos minutos.</p>
           <div class="book-benefits">
             <div class="bben">Primera evaluación sin costo</div>
             <div class="bben">Respuesta personal, no automática</div>
@@ -192,6 +243,11 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
             <input type="hidden" name="access_key" value={web3formsAccessKey}>
             <input type="hidden" name="subject" value="Nueva solicitud desde Celerisys">
             <input type="hidden" name="from_name" value="Web Celerisys">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="landing_page" value="">
             <input class="contact-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
 
             <div class="contact-form-head">
@@ -205,27 +261,31 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
                 <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" required>
               </label>
               <label class="contact-field">
-                <span>Empresa *</span>
-                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio" required>
+                <span>Empresa (opcional)</span>
+                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio">
               </label>
               <label class="contact-field">
                 <span>Correo *</span>
                 <input type="email" name="email" autocomplete="email" placeholder="nombre@empresa.com" required>
               </label>
               <label class="contact-field">
-                <span>WhatsApp</span>
+                <span>WhatsApp (opcional)</span>
                 <input type="tel" name="phone" autocomplete="tel" placeholder="+51 999 999 999">
               </label>
               <label class="contact-field contact-field-wide">
-                <span>¿Qué te gustaría mejorar? *</span>
-                <select name="priority" required>
-                  <option value="" selected disabled>Selecciona una opción</option>
-                  <option value="Automatizar tareas repetitivas">Automatizar tareas repetitivas</option>
-                  <option value="Ordenar información y reportes">Ordenar información y reportes</option>
-                  <option value="Crear software a medida">Crear software a medida</option>
-                  <option value="Aplicar inteligencia artificial">Aplicar inteligencia artificial</option>
-                  <option value="Aún no estoy seguro">Aún no estoy seguro</option>
-                </select>
+                <span>¿Qué te gustaría mejorar? (opcional)</span>
+                <span class="select-shell">
+                  <span class="material-symbols-rounded select-leading" aria-hidden="true">tune</span>
+                  <select name="priority" aria-label="Selecciona qué te gustaría mejorar">
+                    <option value="" selected>Selecciona el principal reto de tu operación</option>
+                    <option value="Automatizar tareas repetitivas">Automatizar tareas repetitivas</option>
+                    <option value="Ordenar información y reportes">Ordenar información y reportes</option>
+                    <option value="Crear software a medida">Crear software a medida</option>
+                    <option value="Aplicar inteligencia artificial">Aplicar inteligencia artificial</option>
+                    <option value="Aún no estoy seguro">Aún no estoy seguro</option>
+                  </select>
+                  <span class="material-symbols-rounded select-chevron" aria-hidden="true">expand_more</span>
+                </span>
               </label>
               <label class="contact-field contact-field-wide">
                 <span>Cuéntanos un poco más *</span>
@@ -235,12 +295,26 @@ const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
 
             <button class="contact-submit" type="submit">Solicitar evaluación gratuita</button>
             <p class="contact-status" role="status" aria-live="polite"></p>
-            <p class="contact-privacy">Usaremos tus datos únicamente para responder esta solicitud.</p>
+            <p class="contact-privacy">Usaremos tus datos únicamente para responder esta solicitud. <a href="/privacidad">Consulta nuestra política de privacidad.</a></p>
           </form>
         </div>
       </div>
     </div>
   </section>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Conversar con Celerisys por WhatsApp"
+    data-conversion="whatsapp-float"
+  >
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.894 9.888-9.894 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.989c-.002 5.45-4.437 9.893-9.892 9.893m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.689 1.448h.005c6.558 0 11.894-5.335 11.897-11.893a11.821 11.821 0 0 0-3.488-8.413Z"/>
+    </svg>
+    WhatsApp
+  </a>
 </Layout>
 
 <style is:global>
@@ -335,6 +409,17 @@ h1 {
 }
 
 .hact { justify-content:flex-start; }
+
+.hero-assurance {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  margin-top:22px;
+  color:var(--muted);
+  font-size:12px;
+}
+.hero-assurance span { display:flex;align-items:center;gap:7px; }
+.hero-assurance span::before { content:'✓';color:var(--green);font-weight:700; }
 
 .btn-p,
 .btn-g {
@@ -464,13 +549,14 @@ h1 {
     var(--surface2);
 }
 
-#what,#method,#booking {
+#what,#method,#faq,#booking {
   background:linear-gradient(145deg,var(--surface) 0%,var(--surface2) 145%);
 }
 
 #what .inner,
 #results .inner,
 #method .inner,
+#faq .inner,
 #booking .inner {
   min-height:auto;
   display:block;
@@ -699,6 +785,28 @@ h1 {
 .book-meta-label { display:flex;align-items:center;gap:8px; }
 .book-meta-label .material-symbols-rounded { font-size:18px;color:var(--blue-light); }
 
+.faq-layout { display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(48px,8vw,100px);align-items:start; }
+.faq-intro { position:sticky;top:110px; }
+.faq-intro .btn-p { margin-top:28px;display:inline-flex; }
+.faq-list { border-top:1px solid var(--border); }
+.faq-list details { border-bottom:1px solid var(--border); }
+.faq-list summary {
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 0;
+  color:var(--white);
+  font-family:var(--font-h);
+  font-size:clamp(17px,2vw,21px);
+  font-weight:600;
+  cursor:pointer;
+}
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list summary::after { content:'+';color:var(--blue);font-size:26px;font-weight:400;line-height:.8;transition:transform .2s ease; }
+.faq-list details[open] summary::after { transform:rotate(45deg); }
+.faq-list details p { max-width:680px;margin:-6px 44px 24px 0;color:var(--muted);line-height:1.7; }
+
 .contact-panel {
   padding:clamp(24px,3vw,34px);
   border-radius:22px;
@@ -727,13 +835,94 @@ h1 {
 .contact-field textarea { min-height:100px;resize:vertical;line-height:1.5; }
 .contact-field input::placeholder,.contact-field textarea::placeholder { color:var(--muted);opacity:.72; }
 .contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus { border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,167,255,.13); }
+.select-shell {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:52px;
+  overflow:hidden;
+  border:1px solid var(--border2);
+  border-radius:14px;
+  background:
+    linear-gradient(135deg,rgba(108,167,255,.09),transparent 42%),
+    var(--card-elevated);
+  color:var(--muted);
+  font-size:14px;
+  transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;
+}
+.select-shell:hover { border-color:rgba(108,167,255,.42); }
+.select-shell:focus-within { border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,167,255,.13); }
+.select-shell select {
+  position:relative;
+  z-index:1;
+  min-height:52px;
+  padding:0 48px 0 46px;
+  border:0;
+  border-radius:0;
+  appearance:none;
+  -webkit-appearance:none;
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  font-weight:600;
+}
+.select-shell.has-value select { color:var(--white); }
+.select-shell select:focus { border-color:transparent;box-shadow:none; }
+.select-shell select option { background:var(--card-elevated);color:var(--white); }
+.select-leading,.select-chevron {
+  position:absolute;
+  z-index:2;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.select-leading { left:15px;color:var(--blue-light);font-size:20px; }
+.select-chevron {
+  right:14px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(108,167,255,.12);
+  color:var(--blue-light);
+  font-size:20px;
+  transition:transform .18s ease,background .18s ease;
+}
+.select-shell:focus-within .select-chevron { transform:translateY(-50%) rotate(180deg);background:rgba(108,167,255,.2); }
 .contact-submit { width:100%;min-height:50px;margin-top:18px;border:0;border-radius:999px;background:var(--button-bg);color:var(--button-text);font-family:var(--font-h);font-size:14px;font-weight:700;cursor:pointer; }
 .contact-submit:disabled { cursor:wait;opacity:.65; }
 .contact-status { min-height:20px;margin-top:10px;color:var(--blue-light);font-size:12px;text-align:center; }
 .contact-status.is-error { color:#d25a5a; }
 .contact-status.is-success { color:var(--green); }
+.contact-status a { color:inherit;text-decoration:underline;text-underline-offset:3px; }
 .contact-privacy { color:var(--muted);font-size:10px;text-align:center; }
+.contact-privacy a { color:inherit;text-decoration:underline;text-underline-offset:3px; }
 .contact-honeypot { position:absolute !important;left:-9999px !important;opacity:0 !important; }
+
+.whatsapp-float {
+  position:fixed;
+  z-index:20;
+  left:max(18px,env(safe-area-inset-left,0px));
+  bottom:max(18px,env(safe-area-inset-bottom,0px));
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:46px;
+  padding:0 17px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:999px;
+  background:#1f9d61;
+  color:#fff;
+  box-shadow:0 12px 36px rgba(0,0,0,.28);
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s ease,background .2s ease;
+}
+.whatsapp-float:hover { transform:translateY(-2px);background:#178553; }
+.whatsapp-float:focus-visible { outline:3px solid var(--blue);outline-offset:3px; }
+.whatsapp-icon { width:20px;height:20px;flex:0 0 auto;fill:currentColor; }
 
 @media(max-width:767px) {
   #hero { padding-top:96px;padding-bottom:56px; }
@@ -763,6 +952,7 @@ h1 {
   #what .inner,
   #results .inner,
   #method .inner,
+  #faq .inner,
   #booking .inner { padding-top:52px;padding-bottom:52px; }
   #what .inner,
   #results .inner,
@@ -775,6 +965,8 @@ h1 {
   .svc:last-child { grid-column:auto; }
   .method-layout { grid-template-columns:1fr;gap:40px; }
   .method-intro { position:static; }
+  .faq-layout { grid-template-columns:1fr;gap:38px; }
+  .faq-intro { position:static; }
 }
 
 @media(min-width:768px) and (max-width:1000px) {
@@ -849,7 +1041,7 @@ html.light .hero-preview { border-color:rgba(255,255,255,.8); }
 }
 
 @media(prefers-contrast:more) {
-  .hero-preview,.pain-card,.svc,.result-feature,.res-card,.result-story,.method-step,.method-promise,.book-meta-box,.cal-panel,.contact-panel { border-color:var(--white); }
+  .hero-preview,.pain-card,.svc,.result-feature,.res-card,.result-story,.method-step,.method-promise,.book-meta-box,.cal-panel,.contact-panel,.faq-list details { border-color:var(--white); }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -861,6 +1053,36 @@ html.light .hero-preview { border-color:rgba(255,255,255,.8); }
   const contactForm = document.getElementById('contact-form');
   const contactStatus = contactForm?.querySelector('.contact-status');
   const contactButton = contactForm?.querySelector('.contact-submit');
+  const prioritySelect = contactForm?.querySelector('[name="priority"]');
+  const priorityShell = prioritySelect?.closest('.select-shell');
+
+  const updatePriorityStyle = () => {
+    if (prioritySelect instanceof HTMLSelectElement) {
+      priorityShell?.classList.toggle('has-value', Boolean(prioritySelect.value));
+    }
+  };
+
+  prioritySelect?.addEventListener('change', updatePriorityStyle);
+  updatePriorityStyle();
+
+  if (contactForm) {
+    const query = new URLSearchParams(window.location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach((name) => {
+      const field = contactForm.querySelector(`[name="${name}"]`);
+      if (field instanceof HTMLInputElement) field.value = query.get(name) || '';
+    });
+    const landingPage = contactForm.querySelector('[name="landing_page"]');
+    if (landingPage instanceof HTMLInputElement) landingPage.value = window.location.href;
+  }
+
+  document.querySelectorAll('[data-conversion]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!(link instanceof HTMLElement)) return;
+      window.dispatchEvent(new CustomEvent('celerisys:conversion', {
+        detail: { action: link.dataset.conversion }
+      }));
+    });
+  });
 
   contactForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -892,8 +1114,12 @@ html.light .hero-preview { border-color:rgba(255,255,255,.8); }
       if (!response.ok || !result.success) throw new Error(result.message || 'No se pudo enviar');
 
       contactForm.reset();
-      contactStatus.textContent = 'Solicitud enviada. Te responderemos muy pronto.';
+      updatePriorityStyle();
+      contactStatus.innerHTML = 'Solicitud enviada. Te responderemos en un día hábil. <a href="https://wa.me/51935875743" target="_blank" rel="noopener noreferrer">También puedes escribirnos por WhatsApp.</a>';
       contactStatus.classList.add('is-success');
+      window.dispatchEvent(new CustomEvent('celerisys:conversion', {
+        detail: { action: 'contact-form-success' }
+      }));
     } catch (error) {
       contactStatus.textContent = 'No pudimos enviar la solicitud. Inténtalo nuevamente.';
       contactStatus.classList.add('is-error');

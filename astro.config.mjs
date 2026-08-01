@@ -2,7 +2,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import obfuscatorPlugin from "vite-plugin-javascript-obfuscator";
 
 export default defineConfig({
   site: 'https://info.celerisys.com',
@@ -25,23 +24,5 @@ export default defineConfig({
         "@components": "/src/components",
       },
     },
-    plugins: [
-      obfuscatorPlugin({
-        apply: "build",
-        exclude: [/node_modules/],
-        options: {
-          debugProtection: true,
-          compact: true,
-          controlFlowFlattening: true,
-          controlFlowFlatteningThreshold: 0.75,
-          deadCodeInjection: true,
-          deadCodeInjectionThreshold: 0.4,
-          stringArray: true,
-          stringArrayEncoding: ['base64'],
-          stringArrayThreshold: 0.75,
-          transformObjectKeys: true,
-        },
-      }),
-    ],
   },
 });

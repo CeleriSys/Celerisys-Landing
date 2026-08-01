@@ -2,8 +2,6 @@
 // Layout y componentes
 import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 // Entradas del blog
 const posts = [
@@ -34,7 +32,7 @@ const posts = [
 ];
 ---
 
-<Layout title="Blog - CeleriSys">
+<Layout title="Blog - Celerisys" noindex={true}>
   <main class="pt-32">
     <Container>
       <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">

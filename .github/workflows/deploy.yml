@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_GOOGLE_APPS_SCRIPT_URL: ${{ vars.PUBLIC_GOOGLE_APPS_SCRIPT_URL }}
+      PUBLIC_GOOGLE_APPS_SCRIPT_URL: https://script.google.com/macros/s/AKfycbxwiT7JGEZt95CYwcV5MtJB06SJcTNTWPL8tscOHXov-G24kOpFd5PO9KjzBl2nWO5tSQ/exec
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4

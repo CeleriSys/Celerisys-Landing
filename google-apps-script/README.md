@@ -18,7 +18,7 @@ This backend receives landing-page submissions, sends a formatted notification t
 
 8. Restart the Astro development server or rebuild the site.
 
-For GitHub Pages, create the repository variable `PUBLIC_GOOGLE_APPS_SCRIPT_URL` under **Settings → Secrets and variables → Actions → Variables**. The deployment workflow injects it during the Astro build.
+For GitHub Pages, the public deployment URL is injected by `.github/workflows/deploy.yml`. If Apps Script generates a new deployment URL, update `PUBLIC_GOOGLE_APPS_SCRIPT_URL` in that workflow before publishing again.
 
 After changing `Code.gs`, create a new deployment version so the public endpoint uses the new code.
 

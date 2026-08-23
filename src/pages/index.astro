@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const configuredWeb3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
-const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3forms'
-  ? ''
-  : configuredWeb3FormsKey;
+const configuredContactEndpoint = import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL ?? '';
+const contactEndpoint = configuredContactEndpoint.startsWith('https://script.google.com/macros/s/')
+  ? configuredContactEndpoint
+  : '';
 ---
 
 <Layout
@@ -20,8 +20,10 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
         <h1>Webs, sistemas y automatizaciones para tu negocio.</h1>
         <p class="hsub">Diseñamos soluciones digitales claras para vender mejor, ordenar procesos y conectar tus herramientas.</p>
         <div class="hact">
-          <a href="#booking" class="btn-p">Solicitar diagnóstico gratuito</a>
-          <a href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio." class="btn-g" target="_blank" rel="noopener noreferrer" data-conversion="whatsapp-hero">Escribir por WhatsApp</a>
+          <a href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio." class="btn-g" target="_blank" rel="noopener noreferrer" data-conversion="whatsapp-hero">
+            <svg class="hero-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.894 9.888-9.894 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.989c-.002 5.45-4.437 9.893-9.892 9.893m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.689 1.448h.005c6.558 0 11.894-5.335 11.897-11.893a11.821 11.821 0 0 0-3.488-8.413Z" /></svg>
+            Escribir por WhatsApp
+          </a>
         </div>
         <div class="hero-assurance" aria-label="Ventajas del diagnóstico">
           <span>Evaluación inicial sin costo</span>
@@ -29,15 +31,25 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
           <span>Sin compromiso</span>
         </div>
       </div>
-      <div class="hero-kinetic" aria-label="Web, sistemas a medida y automatización">
-        <div class="kinetic-stage" aria-hidden="true">
-          <span class="kinetic-orb kinetic-orb-blue"></span>
-          <span class="kinetic-orb kinetic-orb-green"></span>
-          <span class="kinetic-orb kinetic-orb-violet"></span>
-          <div class="kinetic-word kinetic-word-web">WEB</div>
-          <div class="kinetic-word kinetic-word-software">SOFTWARE</div>
-          <div class="kinetic-word kinetic-word-auto">AUTOMATIZACIÓN</div>
-          <div class="kinetic-caption">Diseño · Desarrollo · Integración</div>
+      <div class="hero-flow">
+        <div class="flow-stage" role="img" aria-label="Proceso de trabajo de Celerisys: contacto, diagnóstico, propuesta, desarrollo y entrega.">
+          <div class="flow-pattern" aria-hidden="true"></div>
+          <svg class="flow-lines" viewBox="0 0 600 490" preserveAspectRatio="none" aria-hidden="true">
+            <path class="flow-signal flow-signal-one" d="M138 113L177 149" />
+            <path class="flow-signal flow-signal-two" d="M291 176L330 143" />
+            <path class="flow-signal flow-signal-three" d="M395 145L368 288" />
+            <path class="flow-signal flow-signal-four" d="M400 339L451 339" />
+            <circle cx="138" cy="113" r="4" /><circle cx="177" cy="149" r="4" />
+            <circle cx="291" cy="176" r="4" /><circle cx="330" cy="143" r="4" />
+            <circle cx="395" cy="145" r="4" /><circle cx="368" cy="288" r="4" />
+            <circle cx="400" cy="339" r="4" /><circle cx="451" cy="339" r="4" />
+          </svg>
+          <div class="flow-card flow-request"><span class="flow-index">01</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l3 3v14H7zM14 3.5v4h4M10 12h4M10 16h4" /></svg></span><strong>Contacto</strong><small>CUÉNTANOS TU RETO</small></div>
+          <div class="flow-card flow-validation"><span class="flow-index">02</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 12 3 3 7-7M5 4h14v16H5z" /></svg></span><strong>Diagnóstico</strong><small>ENTENDEMOS TU PROCESO</small></div>
+          <div class="flow-card flow-team"><span class="flow-index">03</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3" /><path d="M5.5 19c.5-3 2.6-5 6.5-5s6 2 6.5 5M4 9.5h2M18 9.5h2" /></svg></span><strong>Propuesta</strong><small>DISEÑAMOS LA SOLUCIÓN</small></div>
+          <div class="flow-card flow-system"><span class="flow-index">04</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2" /><path d="M8 9h8M8 13h5M8 17h3" /></svg></span><strong>Desarrollo</strong><small>CONSTRUIMOS CONTIGO</small></div>
+          <div class="flow-card flow-report"><span class="flow-index">05</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l3 3v14H7zM14 3.5v4h4M10 14l2 2 4-4" /></svg></span><strong>Entrega</strong><small>SOLUCIÓN FUNCIONANDO</small><span class="flow-outcome-mark" aria-hidden="true"></span></div>
+          <div class="flow-caption"><span>DE TU PRIMER MENSAJE A UNA SOLUCIÓN FUNCIONANDO</span></div>
         </div>
       </div>
     </div>
@@ -138,25 +150,25 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
       <div class="method-layout">
         <div class="method-intro reveal fl">
           <span class="slabel">Método</span>
-          <h2 class="stitle">De problema invisible a sistema funcionando.</h2>
+          <h2 class="stitle">Antes de construir, hacemos que el problema sea visible.</h2>
           <p class="sbody">Trabajamos por etapas para entender el problema, priorizar bien y entregar una primera versión útil sin inflar el proyecto.</p>
         </div>
         <div class="method-path stg reveal fr">
           <article class="method-step">
             <div class="method-index">01</div>
-            <div><h3>Entendemos cómo trabajas hoy</h3><p>Mapeamos tareas, responsables, archivos y puntos donde la información se corta.</p></div>
+            <div><span class="method-phase">ObservAR</span><h3>Entendemos cómo trabajas hoy</h3><p>Mapeamos tareas, responsables, archivos y puntos donde la información se corta.</p></div>
           </article>
           <article class="method-step">
             <div class="method-index">02</div>
-            <div><h3>Elegimos el primer problema correcto</h3><p>Definimos qué conviene resolver primero para generar impacto sin frenar tu operación.</p></div>
+            <div><span class="method-phase">Priorizar</span><h3>Elegimos el primer problema correcto</h3><p>Definimos qué conviene resolver primero para generar impacto sin frenar tu operación.</p></div>
           </article>
           <article class="method-step">
             <div class="method-index">03</div>
-            <div><h3>Creamos y validamos contigo</h3><p>Desarrollamos por partes pequeñas para que puedas probar, corregir y aprobar con evidencia.</p></div>
+            <div><span class="method-phase">Validar</span><h3>Creamos y validamos contigo</h3><p>Desarrollamos por partes pequeñas para que puedas probar, corregir y aprobar con evidencia.</p></div>
           </article>
           <article class="method-step">
             <div class="method-index">04</div>
-            <div><h3>Lo llevamos al trabajo real</h3><p>Implementamos, capacitamos y acompañamos los primeros usos para ajustar lo que haga falta.</p></div>
+            <div><span class="method-phase">Adoptar</span><h3>Lo llevamos al trabajo real</h3><p>Implementamos, capacitamos y acompañamos los primeros usos para ajustar lo que haga falta.</p></div>
           </article>
         </div>
       </div>
@@ -223,16 +235,21 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
         </div>
 
         <div class="reveal fr">
-          <form id="contact-form" class="contact-panel" action="https://api.web3forms.com/submit" method="POST" novalidate>
-            <input type="hidden" name="access_key" value={web3formsAccessKey}>
-            <input type="hidden" name="subject" value="Nueva solicitud desde Celerisys">
-            <input type="hidden" name="from_name" value="Web Celerisys">
+          <form
+            id="contact-form"
+            class="contact-panel"
+            action={contactEndpoint || undefined}
+            data-endpoint={contactEndpoint}
+            method="POST"
+            novalidate
+          >
             <input type="hidden" name="utm_source" value="">
             <input type="hidden" name="utm_medium" value="">
             <input type="hidden" name="utm_campaign" value="">
             <input type="hidden" name="utm_content" value="">
-            <input type="hidden" name="landing_page" value="">
-            <input class="contact-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="landing_page" id="landing-page-field" value="">
+            <input type="hidden" name="form_started_at" id="form-started-at" value="">
+            <input class="contact-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="contact-form-head">
               <span>Hablemos de tu operación</span>
@@ -242,25 +259,28 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
             <div class="contact-grid">
               <label class="contact-field">
                 <span>Nombre *</span>
-                <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" required>
+                <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" minlength="2" maxlength="80" aria-describedby="name-error" required>
+                <small class="field-error" id="name-error"></small>
               </label>
               <label class="contact-field">
                 <span>Empresa (opcional)</span>
-                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio">
+                <input type="text" name="company" autocomplete="organization" placeholder="Nombre de tu negocio" maxlength="100">
               </label>
               <label class="contact-field">
                 <span>Correo *</span>
-                <input type="email" name="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+                <input type="email" name="email" autocomplete="email" placeholder="nombre@empresa.com" maxlength="160" aria-describedby="email-error" required>
+                <small class="field-error" id="email-error"></small>
               </label>
               <label class="contact-field">
                 <span>WhatsApp (opcional)</span>
-                <input type="tel" name="phone" autocomplete="tel" placeholder="+51 999 999 999">
+                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+51 999 999 999" maxlength="24" pattern="[+0-9() .-]{7,24}" aria-describedby="phone-error">
+                <small class="field-error" id="phone-error"></small>
               </label>
               <label class="contact-field contact-field-wide">
                 <span>¿Qué te gustaría mejorar? (opcional)</span>
                 <span class="select-shell">
                   <span class="material-symbols-rounded select-leading" aria-hidden="true">tune</span>
-                  <select name="priority" aria-label="Selecciona qué te gustaría mejorar">
+                  <select name="interest" aria-label="Selecciona qué te gustaría mejorar">
                     <option value="" selected>Selecciona el principal reto de tu operación</option>
                     <option value="Automatizar tareas repetitivas">Automatizar tareas repetitivas</option>
                     <option value="Ordenar información y reportes">Ordenar información y reportes</option>
@@ -273,7 +293,8 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
               </label>
               <label class="contact-field contact-field-wide">
                 <span>Cuéntanos un poco más *</span>
-                <textarea name="message" rows="4" placeholder="¿Qué proceso te quita más tiempo hoy?" required></textarea>
+                <textarea name="message" rows="4" placeholder="¿Qué proceso te quita más tiempo hoy?" minlength="20" maxlength="2000" aria-describedby="message-error message-count" required></textarea>
+                <span class="field-meta"><small class="field-error" id="message-error"></small><small id="message-count">0/2000</small></span>
               </label>
             </div>
 
@@ -286,19 +307,6 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
     </div>
   </section>
 
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Conversar con Celerisys por WhatsApp"
-    data-conversion="whatsapp-float"
-  >
-    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.894 9.888-9.894 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.989c-.002 5.45-4.437 9.893-9.892 9.893m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.689 1.448h.005c6.558 0 11.894-5.335 11.897-11.893a11.821 11.821 0 0 0-3.488-8.413Z"/>
-    </svg>
-    WhatsApp
-  </a>
 </Layout>
 
 <style is:global>
@@ -337,13 +345,13 @@ const web3formsAccessKey = configuredWeb3FormsKey === 'tu_clave_publica_de_web3f
 .hero-layout {
   position:relative;
   z-index:2;
-  width:min(100%,1240px);
+  width:min(100%,1200px);
   min-height:calc(100svh - clamp(146px,18vh,196px));
   margin:0 auto;
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+  grid-template-columns:minmax(0,1.03fr) minmax(440px,.97fr);
   align-items:center;
-  gap:clamp(42px,6vw,88px);
+  gap:clamp(42px,4vw,72px);
 }
 
 .hero-copy { min-width:0; }
@@ -358,13 +366,18 @@ nav.nav-header {
 }
 
 .hlabel {
-  margin-bottom:22px;
-  padding:7px 13px;
-  background:rgba(255,255,255,.035);
-  border-color:var(--border2);
-  color:var(--muted);
-  letter-spacing:.07em;
+  box-sizing:border-box;
+  max-width:100%;
+  margin-bottom:28px;
+  padding:6px 11px;
+  background:rgba(255,255,255,.02);
+  border-color:rgba(255,255,255,.1);
+  color:rgba(255,255,255,.5);
+  font-size:10px;
+  letter-spacing:.06em;
+  line-height:1.35;
   text-transform:none;
+  white-space:normal;
 }
 
 .hlabel::before {
@@ -386,13 +399,13 @@ h1 {
 
 .hsub {
   max-width:600px;
-  margin:24px 0 30px;
+  margin:28px 0 34px;
   font-size:18px;
   line-height:1.58;
   text-wrap:balance;
 }
 
-.hact { justify-content:flex-start; }
+.hact { justify-content:flex-start;margin-top:2px; }
 
 .hero-assurance {
   display:flex;
@@ -410,10 +423,12 @@ h1 {
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  gap:10px;
   min-height:52px;
   padding:0 25px;
-  border-radius:999px;
+  border-radius:14px;
   font-size:15px;
+  line-height:1;
   transition:background-color .18s ease,border-color .18s ease,color .18s ease;
 }
 
@@ -429,6 +444,11 @@ h1 {
   box-shadow:none;
 }
 
+.hero-copy .btn-g { background:var(--button-bg);border-color:var(--button-bg);color:var(--button-text);box-shadow:0 10px 24px rgba(49,120,238,.2); }
+.hero-copy .btn-g:hover { background:var(--button-bg);border-color:var(--button-bg);color:var(--button-text);filter:brightness(.92);box-shadow:0 12px 28px rgba(49,120,238,.28); }
+.hero-copy .btn-g:focus-visible { outline:3px solid var(--blue-light);outline-offset:4px;box-shadow:0 0 0 6px rgba(108,167,255,.16),0 10px 24px rgba(49,120,238,.24); }
+.hero-whatsapp-icon { display:block;width:19px;height:19px;flex:0 0 auto;fill:currentColor; }
+
 .btn-p:active,
 .btn-g:active { transform:scale(.97);transition-duration:100ms; }
 
@@ -438,94 +458,102 @@ h1 {
   color:var(--white);
 }
 
-.hero-kinetic {
+.hero-flow {
   position:relative;
   width:100%;
   margin-top:0;
-  min-height:430px;
   text-align:left;
 }
 
-.kinetic-stage {
+.flow-stage {
   position:relative;
-  min-height:430px;
+  aspect-ratio:600 / 490;
   overflow:hidden;
   isolation:isolate;
+  border:1px solid rgba(108,167,255,.3);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(18,35,59,.98),rgba(8,19,34,.98));
+  box-shadow:0 28px 70px rgba(0,0,0,.34),0 4px 18px rgba(49,120,238,.09);
 }
 
-.kinetic-stage::after {
+.flow-stage::before {
   content:'';
   position:absolute;
-  inset:12% 4% 10% 10%;
-  z-index:-2;
-  background:radial-gradient(ellipse at center,rgba(69,133,255,.13),transparent 68%);
-  filter:blur(8px);
-}
-
-.kinetic-word {
-  position:absolute;
-  z-index:2;
-  font-weight:900;
-  line-height:.82;
-  letter-spacing:-.075em;
-  white-space:nowrap;
-  will-change:transform;
-}
-
-.kinetic-word-web {
-  top:56px;
-  left:4px;
-  font-size:clamp(78px,8.6vw,124px);
-  color:#fff;
-  animation:kineticDrift 7s ease-in-out infinite;
-}
-
-.kinetic-word-software {
-  top:166px;
-  right:2px;
-  font-size:clamp(58px,6.4vw,92px);
-  color:transparent;
-  -webkit-text-stroke:1.5px rgba(151,190,255,.78);
-  animation:kineticDrift 8s ease-in-out -2s infinite reverse;
-}
-
-.kinetic-word-auto {
-  left:28px;
-  bottom:82px;
-  font-size:clamp(39px,4.4vw,64px);
-  background:linear-gradient(90deg,#65d6a3,#a5efce 60%,#6ca7ff);
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
-  animation:kineticDrift 9s ease-in-out -4s infinite;
-}
-
-.kinetic-caption {
-  position:absolute;
-  right:8px;
-  bottom:25px;
-  color:rgba(255,255,255,.48);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-
-.kinetic-orb {
-  position:absolute;
+  width:420px;
+  aspect-ratio:1;
+  top:36px;
+  left:50%;
   z-index:-1;
   border-radius:50%;
-  filter:blur(2px);
-  opacity:.72;
-  animation:orbDrift 9s ease-in-out infinite;
+  transform:translateX(-50%);
+  background:repeating-radial-gradient(circle,transparent 0 42px,rgba(108,167,255,.09) 43px 44px,transparent 45px 70px);
 }
 
-.kinetic-orb-blue { width:190px;height:190px;right:30px;top:26px;background:rgba(65,119,255,.22); }
-.kinetic-orb-green { width:110px;height:110px;left:18px;bottom:24px;background:rgba(101,214,163,.2);animation-delay:-3s; }
-.kinetic-orb-violet { width:70px;height:70px;right:42px;bottom:58px;background:rgba(151,91,255,.28);animation-delay:-6s; }
+html:not(.light) .flow-stage::before { display:none; }
 
-@keyframes kineticDrift { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(10px,-7px,0); } }
-@keyframes orbDrift { 0%,100% { transform:translate3d(0,0,0) scale(1); } 50% { transform:translate3d(-12px,10px,0) scale(1.08); } }
+.flow-pattern {
+  position:absolute;
+  top:22px;
+  right:24px;
+  width:42px;
+  height:28px;
+  opacity:.3;
+  background-image:radial-gradient(circle,#6ca7ff 1px,transparent 1.2px);
+  background-size:8px 8px;
+}
+
+.flow-lines {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  z-index:0;
+}
+
+.flow-signal { fill:none;stroke:#1677ff;stroke-width:3;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;animation:flowSignal .4s ease forwards; }
+.flow-signal-two { animation-delay:.16s; }.flow-signal-three { animation-delay:.32s; }.flow-signal-four { animation-delay:.48s; }
+.flow-lines circle { fill:#1677ff;opacity:0;animation:flowNode .16s ease forwards; }
+.flow-lines circle:nth-of-type(3),.flow-lines circle:nth-of-type(4) { animation-delay:.16s; }.flow-lines circle:nth-of-type(5),.flow-lines circle:nth-of-type(6) { animation-delay:.32s; }.flow-lines circle:nth-of-type(7),.flow-lines circle:nth-of-type(8) { animation-delay:.48s; }
+
+.flow-card {
+  position:absolute;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  width:22.5%;
+  height:22.5%;
+  min-height:0;
+  padding:17px;
+  border:1px solid rgba(108,167,255,.3);
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(31,52,82,.98),rgba(15,31,52,.98));
+  box-shadow:0 14px 30px rgba(0,0,0,.28),0 2px 8px rgba(49,120,238,.08);
+  opacity:0;
+  animation:flowCard .34s ease forwards;
+}
+.flow-card strong { margin-top:auto;font-family:var(--font-h);font-size:16px;line-height:1.1;letter-spacing:-.025em;color:#f4f7fb; }
+.flow-card small { display:block;margin-top:7px;color:#a3b3c7;font-size:7.5px;font-weight:800;letter-spacing:.085em;line-height:1.25;text-transform:uppercase; }
+.flow-index { color:#1677ff;font-size:10px;font-weight:800;letter-spacing:.1em; }
+.flow-icon { position:absolute;top:13px;right:13px;display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(76,148,255,.17);color:#6ca7ff; }
+.flow-icon svg { width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+.flow-request { top:6.3%;left:7.2%;animation-delay:.04s; }
+.flow-validation { top:29.4%;left:29%;width:20.5%;animation-delay:.16s; }
+.flow-team { top:8%;left:55.4%;width:22.2%;animation-delay:.28s; }
+.flow-system { top:58.9%;left:42.8%;width:24.5%;animation-delay:.4s; }
+.flow-report { top:57.1%;right:3%;width:21.4%;animation-delay:.52s; }
+.flow-report .flow-index,.flow-report .flow-icon { color:var(--green); }
+.flow-report .flow-icon { background:rgba(101,214,163,.18); }
+.flow-outcome-mark { position:absolute;top:14px;right:13px;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(101,214,163,.14);opacity:0;animation:flowNode .18s ease .7s forwards; }
+.flow-caption { position:absolute;right:24px;bottom:20px;left:24px;display:flex;align-items:center;gap:12px;color:#8497af;font-size:8px;font-weight:800;letter-spacing:.1em;line-height:1.2;text-align:center; }
+.flow-caption::before,.flow-caption::after { content:'';height:1px;flex:1;background:rgba(115,130,154,.25); }.flow-caption span { flex:0 1 auto; }
+
+@keyframes flowSignal { to { stroke-dashoffset:0; } }
+@keyframes flowCard { to { opacity:1;transform:translateY(0); } }
+@keyframes flowNode { to { opacity:1; } }
+.flow-card { transform:translateY(8px); }
+@media(prefers-reduced-motion:reduce) { .flow-card,.flow-signal,.flow-lines circle,.flow-outcome-mark { animation:none;opacity:1;transform:none;stroke-dashoffset:0; } }
 
 .reveal,
 .reveal.fl,
@@ -805,20 +833,23 @@ h1 {
 
 .method-layout {
   display:grid;
-  grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);
-  gap:clamp(34px,4.5vw,60px);
-  align-items:center;
+  grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);
+  gap:clamp(52px,8vw,112px);
+  align-items:start;
 }
 
-.method-intro { position:relative; }
+.method-intro { position:sticky;top:130px; }
 .method-intro .stitle { max-width:620px;margin:6px 0 0;font-size:clamp(40px,4.35vw,60px); }
-.method-intro .sbody { max-width:520px;margin-top:20px; }
+.method-intro .sbody { max-width:470px;margin-top:20px; }
 
-.method-path { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:44px; }
+.method-path { position:relative;display:grid;gap:12px; }
+.method-path::before { content:'';position:absolute;top:30px;bottom:30px;left:31px;width:1px;background:var(--border2); }
 .method-step {
   position:relative;
-  min-height:190px;
-  padding:20px;
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  min-height:150px;
+  padding:24px;
   overflow:hidden;
   border:1px solid var(--border2);
   border-radius:18px;
@@ -826,8 +857,8 @@ h1 {
   box-shadow:0 1px 0 rgba(255,255,255,.04),var(--page-shadow);
 }
 
-.method-index { margin-bottom:20px;color:var(--muted);font-family:var(--font-h);font-size:13px;font-weight:700;letter-spacing:.06em; }
-.method-step h3 { max-width:220px;margin:0 0 9px;font-family:var(--font-h);font-size:19px;line-height:1.15;letter-spacing:-.025em; }
+.method-index { position:relative;z-index:1;display:grid;place-items:center;width:16px;height:16px;margin-top:4px;border:4px solid var(--card);border-radius:50%;background:var(--blue);color:transparent;font-size:0; }
+.method-step h3 { max-width:320px;margin:7px 0 9px;font-family:var(--font-h);font-size:19px;line-height:1.15;letter-spacing:-.025em; }
 .method-step p { color:var(--muted);font-size:13px;line-height:1.55; }
 
 .book-wrap { margin-top:0;align-items:start; }
@@ -885,6 +916,11 @@ h1 {
 .contact-field textarea { min-height:100px;resize:vertical;line-height:1.5; }
 .contact-field input::placeholder,.contact-field textarea::placeholder { color:var(--muted);opacity:.72; }
 .contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus { border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,167,255,.13); }
+.contact-field input[aria-invalid="true"],.contact-field textarea[aria-invalid="true"] { border-color:#e15c64;box-shadow:0 0 0 3px rgba(225,92,100,.12); }
+.field-error { min-height:15px;color:#e8767d;font-size:11px;font-weight:500;line-height:1.35; }
+.field-error:empty { display:none; }
+.field-meta { display:flex;align-items:flex-start;justify-content:space-between;gap:16px;color:var(--muted);font-size:10px; }
+.field-meta .field-error { flex:1; }
 .select-shell {
   position:relative;
   display:flex;
@@ -940,52 +976,28 @@ h1 {
   transition:transform .18s ease,background .18s ease;
 }
 .select-shell:focus-within .select-chevron { transform:translateY(-50%) rotate(180deg);background:rgba(108,167,255,.2); }
-.contact-submit { width:100%;min-height:50px;margin-top:18px;border:0;border-radius:999px;background:var(--button-bg);color:var(--button-text);font-family:var(--font-h);font-size:14px;font-weight:700;cursor:pointer; }
+.contact-submit { width:100%;min-height:50px;margin-top:18px;border:0;border-radius:14px;background:var(--button-bg);color:var(--button-text);font-family:var(--font-h);font-size:14px;font-weight:700;cursor:pointer; }
 .contact-submit:disabled { cursor:wait;opacity:.65; }
-.contact-status { min-height:20px;margin-top:10px;color:var(--blue-light);font-size:12px;text-align:center; }
-.contact-status.is-error { color:#d25a5a; }
-.contact-status.is-success { color:var(--green); }
-.contact-status a { color:inherit;text-decoration:underline;text-underline-offset:3px; }
+.contact-status { display:none;margin-top:14px;padding:11px 13px;border:1px solid transparent;border-radius:10px;font-size:12px;line-height:1.45;text-align:center; }
+.contact-status:not(:empty) { display:block; }
+.contact-status[data-state="success"] { border-color:rgba(101,214,163,.28);background:rgba(101,214,163,.1);color:var(--green); }
+.contact-status[data-state="error"] { border-color:rgba(225,92,100,.28);background:rgba(225,92,100,.09);color:#e8767d; }
 .contact-privacy { color:var(--muted);font-size:10px;text-align:center; }
 .contact-privacy a { color:inherit;text-decoration:underline;text-underline-offset:3px; }
 .contact-honeypot { position:absolute !important;left:-9999px !important;opacity:0 !important; }
-
-.whatsapp-float {
-  position:fixed;
-  z-index:20;
-  left:max(18px,env(safe-area-inset-left,0px));
-  bottom:max(18px,env(safe-area-inset-bottom,0px));
-  display:flex;
-  align-items:center;
-  gap:8px;
-  min-height:46px;
-  padding:0 17px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:999px;
-  background:#1f9d61;
-  color:#fff;
-  box-shadow:0 12px 36px rgba(0,0,0,.28);
-  font-size:13px;
-  font-weight:700;
-  text-decoration:none;
-  transition:transform .2s ease,background .2s ease;
-}
-.whatsapp-float:hover { transform:translateY(-2px);background:#178553; }
-.whatsapp-float:focus-visible { outline:3px solid var(--blue);outline-offset:3px; }
-.whatsapp-icon { width:20px;height:20px;flex:0 0 auto;fill:currentColor; }
 
 @media(max-width:767px) {
   #hero { padding-top:96px;padding-bottom:56px; }
   .hero-layout { min-height:auto;grid-template-columns:1fr;gap:44px; }
   h1 { font-size:clamp(40px,12vw,62px); }
   .hsub { font-size:17px; }
-  .hero-kinetic,.kinetic-stage { min-height:300px; }
-  .kinetic-word-web { top:38px;font-size:74px; }
-  .kinetic-word-software { top:119px;font-size:48px; }
-  .kinetic-word-auto { left:8px;bottom:63px;font-size:30px; }
-  .kinetic-caption { right:0;bottom:20px;font-size:9px;letter-spacing:.09em; }
-  .kinetic-orb-blue { width:140px;height:140px;right:4px; }
-  .kinetic-orb-green { width:80px;height:80px;left:0; }
+  .hero-flow { min-height:auto; }
+  .flow-stage { display:flex;box-sizing:border-box;min-height:760px;aspect-ratio:auto;padding:48px 24px 58px;flex-direction:column;gap:12px; }
+  .flow-stage::before,.flow-pattern,.flow-lines { display:none; }
+  .flow-card { position:relative;top:auto;right:auto;bottom:auto;left:auto;width:100%;height:auto;min-height:112px;padding:17px; }
+  .flow-card strong { font-size:16px; }
+  .flow-card small { font-size:8px; }
+  .flow-caption { right:24px;bottom:20px;left:24px;font-size:7px; }
   .split-heading { grid-template-columns:1fr;gap:18px; }
   .results-bento { grid-template-columns:1fr;margin-top:30px; }
   .result-feature,.res-card,.result-story { grid-column:auto;grid-row:auto; }
@@ -1033,7 +1045,7 @@ h1 {
   .hero-copy { text-align:center; }
   h1,.hsub { margin-left:auto;margin-right:auto; }
   .hact { justify-content:center; }
-  .hero-kinetic { width:min(100%,760px);margin-inline:auto; }
+  .hero-flow { width:min(100%,760px);margin-inline:auto; }
 }
 
 /* Mantiene Resultados completo cuando el zoom reduce la altura CSS disponible. */
@@ -1082,35 +1094,68 @@ html.light #results {
     var(--surface2);
 }
 
-html.light .hlabel { background:rgba(255,255,255,.66);border-color:rgba(17,17,20,.1); }
+html.light .hlabel { background:rgba(255,255,255,.66);border-color:rgba(17,17,20,.1);color:rgba(11,33,53,.52); }
 html.light .btn-g:hover { background:rgba(17,17,20,.06);border-color:rgba(17,17,20,.22);color:var(--white); }
 html.light .pain-icon,
 html.light .svc-ico { background:#f1f5fa;border-color:rgba(18,103,196,.14); }
-html.light .kinetic-word-web { color:#0b2135; }
-html.light .kinetic-word-software { -webkit-text-stroke-color:rgba(9,103,194,.76); }
-html.light .kinetic-word-auto {
-  background-image:linear-gradient(90deg,#087a55,#0967c2 72%,#6b42ad);
-}
-html.light .kinetic-caption { color:rgba(11,33,53,.58); }
-html.light .kinetic-stage::after { background:radial-gradient(ellipse at center,rgba(9,103,194,.13),transparent 68%); }
-html.light .kinetic-orb-blue { background:rgba(9,103,194,.18); }
-html.light .kinetic-orb-green { background:rgba(8,122,85,.16); }
-html.light .kinetic-orb-violet { background:rgba(107,66,173,.18); }
+html.light .flow-stage { border-color:rgba(22,119,255,.17);background:#fafdff;box-shadow:0 28px 70px rgba(8,27,51,.16),0 4px 14px rgba(22,119,255,.06); }
+html.light .flow-stage::before { background:repeating-radial-gradient(circle,transparent 0 42px,rgba(22,119,255,.055) 43px 44px,transparent 45px 70px); }
+html.light .flow-pattern { background-image:radial-gradient(circle,#1677ff 1px,transparent 1.2px); }
+html.light .flow-card { border-color:rgba(115,130,154,.16);background:#fff;box-shadow:0 12px 28px rgba(8,27,51,.1),0 2px 6px rgba(22,119,255,.04); }
+html.light .flow-card strong { color:#081b33; }
+html.light .flow-card small,
+html.light .flow-caption { color:#73829a; }
+html.light .flow-icon { background:rgba(22,119,255,.09);color:#1677ff; }
+html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
 @media(prefers-contrast:more) {
   .pain-card,.svc,.result-feature,.res-card,.result-story,.method-step,.book-meta-box,.cal-panel,.contact-panel,.faq-list details { border-color:var(--white); }
 }
 
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important; }
+  .flow-signal { stroke-dashoffset:0;animation:none; }
 }
 </style>
 
 <script is:inline>
   const contactForm = document.getElementById('contact-form');
-  const contactStatus = contactForm?.querySelector('.contact-status');
   const contactButton = contactForm?.querySelector('.contact-submit');
-  const prioritySelect = contactForm?.querySelector('[name="priority"]');
+  const contactStatus = contactForm?.querySelector('.contact-status');
+  const prioritySelect = contactForm?.querySelector('[name="interest"]');
   const priorityShell = prioritySelect?.closest('.select-shell');
+  const messageField = contactForm?.querySelector('[name="message"]');
+  const messageCount = document.getElementById('message-count');
+  const formStartedAt = document.getElementById('form-started-at');
+
+  const resetStartedAt = () => {
+    if (formStartedAt instanceof HTMLInputElement) formStartedAt.value = String(Date.now());
+  };
+
+  const updateMessageCount = () => {
+    if (messageField instanceof HTMLTextAreaElement && messageCount) {
+      messageCount.textContent = `${messageField.value.length}/2000`;
+    }
+  };
+
+  const validationMessage = (field) => {
+    const value = field.value.trim();
+    if (field.required && !value) return 'Completa este campo para continuar.';
+    if (field.name === 'name' && value.length < 2) return 'Escribe al menos 2 caracteres.';
+    if (field.name === 'email' && field.validity.typeMismatch) return 'Ingresa un correo válido, por ejemplo nombre@empresa.com.';
+    if (field.name === 'phone' && value && !/^[+0-9() .-]{7,24}$/.test(value)) return 'Usa un número válido, por ejemplo +51 999 999 999.';
+    if (field.name === 'message' && value.length < 20) return 'Cuéntanos un poco más: usa al menos 20 caracteres.';
+    return '';
+  };
+
+  const validateField = (field) => {
+    if (!(field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement)) return true;
+    const message = validationMessage(field);
+    field.setAttribute('aria-invalid', message ? 'true' : 'false');
+    const errorId = field.getAttribute('aria-describedby')?.split(' ')[0];
+    const error = errorId ? document.getElementById(errorId) : null;
+    if (error?.classList.contains('field-error')) error.textContent = message;
+    return !message;
+  };
 
   const updatePriorityStyle = () => {
     if (prioritySelect instanceof HTMLSelectElement) {
@@ -1119,7 +1164,10 @@ html.light .kinetic-orb-violet { background:rgba(107,66,173,.18); }
   };
 
   prioritySelect?.addEventListener('change', updatePriorityStyle);
+  messageField?.addEventListener('input', updateMessageCount);
   updatePriorityStyle();
+  updateMessageCount();
+  resetStartedAt();
 
   if (contactForm) {
     const query = new URLSearchParams(window.location.search);
@@ -1127,8 +1175,15 @@ html.light .kinetic-orb-violet { background:rgba(107,66,173,.18); }
       const field = contactForm.querySelector(`[name="${name}"]`);
       if (field instanceof HTMLInputElement) field.value = query.get(name) || '';
     });
-    const landingPage = contactForm.querySelector('[name="landing_page"]');
+    const landingPage = document.getElementById('landing-page-field');
     if (landingPage instanceof HTMLInputElement) landingPage.value = window.location.href;
+
+    contactForm.querySelectorAll('.contact-field input, .contact-field textarea').forEach((field) => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+      });
+    });
   }
 
   document.querySelectorAll('[data-conversion]').forEach((link) => {
@@ -1142,46 +1197,67 @@ html.light .kinetic-orb-violet { background:rgba(107,66,173,.18); }
 
   contactForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
-    contactStatus?.classList.remove('is-error', 'is-success');
 
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
+    const fields = [...contactForm.querySelectorAll('.contact-field input, .contact-field textarea')];
+    const validationResults = fields.map((field) => ({ field, valid: validateField(field) }));
+    const invalidField = validationResults.find((result) => !result.valid)?.field;
+    if (invalidField instanceof HTMLElement) {
+      invalidField.focus();
       return;
     }
 
-    const accessKey = contactForm.querySelector('[name="access_key"]')?.value;
-    if (!accessKey) {
-      contactStatus.textContent = 'Falta conectar el correo receptor de Web3Forms.';
-      contactStatus.classList.add('is-error');
+    const endpoint = contactForm.dataset.endpoint;
+    if (!endpoint) {
+      if (contactStatus instanceof HTMLElement) {
+        contactStatus.dataset.state = 'error';
+        contactStatus.textContent = 'El formulario todavía no está conectado. Por favor, escríbenos por WhatsApp.';
+      }
       return;
     }
 
-    contactButton.disabled = true;
-    contactButton.textContent = 'Enviando…';
-    contactStatus.textContent = '';
+    const senderName = contactForm.querySelector('[name="name"]')?.value.trim() || '';
+    if (contactButton instanceof HTMLButtonElement) {
+      contactButton.disabled = true;
+      contactButton.textContent = 'Enviando…';
+    }
+    if (contactStatus instanceof HTMLElement) contactStatus.textContent = '';
+    window.dispatchEvent(new CustomEvent('celerisys:conversion', {
+      detail: { action: 'contact-form-submit' }
+    }));
 
     try {
-      const response = await fetch(contactForm.action, {
+      await fetch(endpoint, {
         method: 'POST',
         body: new FormData(contactForm),
-        headers: { Accept: 'application/json' }
+        mode: 'no-cors'
       });
-      const result = await response.json();
-      if (!response.ok || !result.success) throw new Error(result.message || 'No se pudo enviar');
-
       contactForm.reset();
       updatePriorityStyle();
-      contactStatus.innerHTML = 'Solicitud enviada. Te responderemos en un día hábil. <a href="https://wa.me/51935875743" target="_blank" rel="noopener noreferrer">También puedes escribirnos por WhatsApp.</a>';
-      contactStatus.classList.add('is-success');
+      updateMessageCount();
+      resetStartedAt();
+      fields.forEach((field) => {
+        field.setAttribute('aria-invalid', 'false');
+        const errorId = field.getAttribute('aria-describedby')?.split(' ')[0];
+        const error = errorId ? document.getElementById(errorId) : null;
+        if (error?.classList.contains('field-error')) error.textContent = '';
+      });
+      if (contactStatus instanceof HTMLElement) {
+        contactStatus.dataset.state = 'success';
+        contactStatus.textContent = `Gracias${senderName ? `, ${senderName}` : ''}. Recibimos tu solicitud y también te enviamos una confirmación por correo.`;
+      }
       window.dispatchEvent(new CustomEvent('celerisys:conversion', {
         detail: { action: 'contact-form-success' }
       }));
-    } catch (error) {
-      contactStatus.textContent = 'No pudimos enviar la solicitud. Inténtalo nuevamente.';
-      contactStatus.classList.add('is-error');
+    } catch {
+      if (contactStatus instanceof HTMLElement) {
+        contactStatus.dataset.state = 'error';
+        contactStatus.textContent = 'No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos por WhatsApp.';
+      }
     } finally {
-      contactButton.disabled = false;
-      contactButton.textContent = 'Solicitar evaluación gratuita';
+      if (contactButton instanceof HTMLButtonElement) {
+        contactButton.disabled = false;
+        contactButton.textContent = 'Solicitar evaluación gratuita';
+      }
     }
   });
 </script>

@@ -1,4 +1,5 @@
 ---
+import LanguagePicker from './LanguagePicker.astro';
 ---
 
 <nav class="nav-header">
@@ -11,12 +12,12 @@
     <span></span>
   </button>
   <ul class="nlinks">
-    <li><a href="/#what">Qué hacemos</a></li>
-    <li><a href="/#results">Resultados</a></li>
-    <li><a href="/#method">Método</a></li>
+    <li><a href="/#what">Servicios</a></li>
+    <li><a href="/#planes">Planes web</a></li>
     <li><a href="/#faq">Preguntas</a></li>
   </ul>
   <div class="nav-actions">
+    <LanguagePicker />
     <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema" type="button">
       <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="5"></circle>
@@ -330,14 +331,14 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
       const isOpen = nav.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      menuToggle.setAttribute('aria-label', window.celerisysText?.(isOpen ? 'Cerrar menú' : 'Abrir menú') || (isOpen ? 'Cerrar menú' : 'Abrir menú'));
     });
 
     nav.querySelectorAll('.nlinks a').forEach(function(link) {
       link.addEventListener('click', function() {
         nav.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Abrir menú');
+        menuToggle.setAttribute('aria-label', window.celerisysText?.('Abrir menú') || 'Abrir menú');
       });
     });
   }

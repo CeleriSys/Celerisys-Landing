@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import WebPlans from '../components/WebPlans.astro';
 
 const configuredContactEndpoint = import.meta.env.PUBLIC_GOOGLE_APPS_SCRIPT_URL ?? '';
 const contactEndpoint = configuredContactEndpoint.startsWith('https://script.google.com/macros/s/')
@@ -16,9 +17,8 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
     <div id="hbg"></div>
     <div class="hero-layout">
       <div class="hero-copy">
-        <div class="hlabel">Software a medida · Automatización · Arequipa, Perú</div>
         <h1>Webs, sistemas y automatizaciones para tu negocio.</h1>
-        <p class="hsub">Diseñamos soluciones digitales claras para vender mejor, ordenar procesos y conectar tus herramientas.</p>
+        <p class="hsub">Desarrollamos tu web y las herramientas que necesitas para atender clientes, organizar información y reducir tareas manuales.</p>
         <div class="hact">
           <a href="https://wa.me/51935875743?text=Hola%2C%20vi%20la%20web%20de%20Celerisys%20y%20quisiera%20evaluar%20qu%C3%A9%20procesos%20puedo%20automatizar%20en%20mi%20negocio." class="btn-g" target="_blank" rel="noopener noreferrer" data-conversion="whatsapp-hero">
             <svg class="hero-whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.894 9.888-9.894 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.989c-.002 5.45-4.437 9.893-9.892 9.893m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.689 1.448h.005c6.558 0 11.894-5.335 11.897-11.893a11.821 11.821 0 0 0-3.488-8.413Z" /></svg>
@@ -28,21 +28,16 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
         <div class="hero-assurance" aria-label="Ventajas del diagnóstico">
           <span>Evaluación inicial sin costo</span>
           <span>Respuesta en un día hábil</span>
-          <span>Sin compromiso</span>
         </div>
       </div>
       <div class="hero-flow">
         <div class="flow-stage" role="img" aria-label="Proceso de trabajo de Celerisys: contacto, diagnóstico, propuesta, desarrollo y entrega.">
-          <div class="flow-pattern" aria-hidden="true"></div>
           <svg class="flow-lines" viewBox="0 0 600 490" preserveAspectRatio="none" aria-hidden="true">
-            <path class="flow-signal flow-signal-one" d="M138 113L177 149" />
-            <path class="flow-signal flow-signal-two" d="M291 176L330 143" />
-            <path class="flow-signal flow-signal-three" d="M395 145L368 288" />
-            <path class="flow-signal flow-signal-four" d="M400 339L451 339" />
-            <circle cx="138" cy="113" r="4" /><circle cx="177" cy="149" r="4" />
-            <circle cx="291" cy="176" r="4" /><circle cx="330" cy="143" r="4" />
-            <circle cx="395" cy="145" r="4" /><circle cx="368" cy="288" r="4" />
-            <circle cx="400" cy="339" r="4" /><circle cx="451" cy="339" r="4" />
+            <defs><marker id="flow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 2L8 5L2 8" fill="none" stroke="currentColor" stroke-width="1.5" /></marker></defs>
+            <path class="flow-signal flow-signal-one" d="M170 120H228" marker-end="url(#flow-arrow)" />
+            <path class="flow-signal flow-signal-two" d="M370 120H428" marker-end="url(#flow-arrow)" />
+            <path class="flow-signal flow-signal-three" d="M500 180V278" marker-end="url(#flow-arrow)" />
+            <path class="flow-signal flow-signal-four" d="M430 340H372" marker-end="url(#flow-arrow)" />
           </svg>
           <div class="flow-card flow-request"><span class="flow-index">01</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l3 3v14H7zM14 3.5v4h4M10 12h4M10 16h4" /></svg></span><strong>Contacto</strong><small>CUÉNTANOS TU RETO</small></div>
           <div class="flow-card flow-validation"><span class="flow-index">02</span><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m7 12 3 3 7-7M5 4h14v16H5z" /></svg></span><strong>Diagnóstico</strong><small>ENTENDEMOS TU PROCESO</small></div>
@@ -60,16 +55,16 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
     <div class="inner">
       <div class="two">
         <div class="what-copy reveal fl">
-          <span class="slabel">Qué hacemos</span>
-          <h2 class="stitle">Creamos soluciones digitales claras, útiles y a medida.</h2>
-          <p class="sbody">Entendemos tu problema, definimos la solución correcta y la llevamos a producción con diseño, desarrollo y acompañamiento.</p>
+          <div class="section-title-group"><span class="slabel">Qué hacemos</span>
+          <h2 class="stitle">Desarrollamos lo que tu negocio necesita.</h2></div>
+          <p class="sbody">Revisamos cómo trabajas, acordamos qué vamos a construir y te acompañamos hasta ponerlo en funcionamiento.</p>
           <a href="#booking" class="btn-p" style="margin-top:28px;">Hablar con el equipo</a>
         </div>
         <div class="service-list stg reveal fr">
           <div class="svc">
             <div>
               <span class="svc-tag">01</span>
-              <div class="svc-name">Automatización útil</div>
+              <div class="svc-name">Automatización de tareas</div>
               <div class="svc-desc">Conectamos tareas repetitivas, formularios, WhatsApp, correos y reportes para ahorrar tiempo real.</div>
             </div>
           </div>
@@ -83,112 +78,42 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
           <div class="svc">
             <div>
               <span class="svc-tag">03</span>
-              <div class="svc-name">Webs que convierten</div>
-              <div class="svc-desc">Landing pages y sitios web con mensaje claro, carga rápida y llamados a la acción bien pensados.</div>
+              <div class="svc-name">Páginas web</div>
+              <div class="svc-desc">Páginas para presentar tu negocio, mostrar tus servicios y recibir consultas por formulario o WhatsApp.</div>
             </div>
           </div>
           <div class="svc">
             <div>
               <span class="svc-tag">04</span>
-              <div class="svc-name">IA aplicada con criterio</div>
-              <div class="svc-desc">Usamos IA cuando mejora atención, clasificación, análisis o productividad. No por moda.</div>
+              <div class="svc-name">Inteligencia artificial</div>
+              <div class="svc-desc">Incorporamos asistentes y herramientas para responder preguntas, clasificar documentos o analizar información.</div>
             </div>
           </div>
         </div>
       </div>
+      <div class="service-method"><h3>Así lo hacemos contigo</h3><ol>
+        <li><span>01</span><div><strong>Entendemos y priorizamos</strong><p>Revisamos tu operación y definimos qué resolver primero.</p></div></li>
+        <li><span>02</span><div><strong>Construimos y validamos</strong><p>Desarrollamos por etapas y ajustamos contigo.</p></div></li>
+        <li><span>03</span><div><strong>Entregamos y acompañamos</strong><p>Ponemos la solución en marcha y te ayudamos a usarla.</p></div></li>
+      </ol></div>
     </div>
   </section>
 
-  <!-- ──────── RESULTS ──────── -->
-  <section id="results">
-    <div class="inner">
-      <div class="section-heading split-heading reveal fb">
-        <div>
-          <span class="slabel">Resultados</span>
-          <h2 class="stitle">Menos tareas.<br>Más negocio.</h2>
-        </div>
-        <p class="sbody">Medimos el impacto en problemas concretos: menos reprocesos, respuestas más rápidas y mejor visibilidad para tomar decisiones.</p>
-      </div>
-      <div class="results-bento stg reveal fb">
-        <article class="result-feature">
-          <span class="result-kicker">Impacto observado</span>
-          <div class="res-num">−70%</div>
-          <div class="res-lbl">Menos tareas repetitivas</div>
-          <div class="result-meter" aria-hidden="true"><span></span></div>
-          <p>El equipo deja de copiar datos entre archivos, perseguir confirmaciones y corregir información duplicada. El resultado exacto depende de cada operación.</p>
-        </article>
-        <article class="res-card result-speed">
-          <span class="result-kicker">Velocidad</span>
-          <div class="res-num">3×</div>
-          <div class="res-lbl">Respuesta operativa más rápida</div>
-          <span class="result-note">Menos esperas entre áreas</span>
-        </article>
-        <article class="res-card result-businesses">
-          <span class="result-kicker">Experiencia</span>
-          <div class="res-num">+4</div>
-          <div class="res-lbl">Negocios transformados</div>
-          <span class="result-note">Soluciones ajustadas a cada negocio</span>
-        </article>
-        <article class="result-story reveal fb">
-          <div class="story-mark">“</div>
-          <p class="tquote">Celerisys encontró la fuga en nuestra operación. En pocas semanas empezamos a recuperar miles de soles que antes se escapaban sin darnos cuenta.</p>
-          <div class="tauthor">
-            <img class="tauthor-img" src="/delypapalogo-optimized.png" width="256" height="256" loading="lazy" alt="Logo de Delypapa">
-            <div>
-              <div class="tauthor-name">Delypapa</div>
-              <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ──────── METHOD ──────── -->
-  <section id="method">
-    <div class="inner">
-      <div class="method-layout">
-        <div class="method-intro reveal fl">
-          <span class="slabel">Método</span>
-          <h2 class="stitle">Antes de construir, hacemos que el problema sea visible.</h2>
-          <p class="sbody">Trabajamos por etapas para entender el problema, priorizar bien y entregar una primera versión útil sin inflar el proyecto.</p>
-        </div>
-        <div class="method-path stg reveal fr">
-          <article class="method-step">
-            <div class="method-index">01</div>
-            <div><span class="method-phase">ObservAR</span><h3>Entendemos cómo trabajas hoy</h3><p>Mapeamos tareas, responsables, archivos y puntos donde la información se corta.</p></div>
-          </article>
-          <article class="method-step">
-            <div class="method-index">02</div>
-            <div><span class="method-phase">Priorizar</span><h3>Elegimos el primer problema correcto</h3><p>Definimos qué conviene resolver primero para generar impacto sin frenar tu operación.</p></div>
-          </article>
-          <article class="method-step">
-            <div class="method-index">03</div>
-            <div><span class="method-phase">Validar</span><h3>Creamos y validamos contigo</h3><p>Desarrollamos por partes pequeñas para que puedas probar, corregir y aprobar con evidencia.</p></div>
-          </article>
-          <article class="method-step">
-            <div class="method-index">04</div>
-            <div><span class="method-phase">Adoptar</span><h3>Lo llevamos al trabajo real</h3><p>Implementamos, capacitamos y acompañamos los primeros usos para ajustar lo que haga falta.</p></div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <WebPlans />
   <!-- ──────── FAQ ──────── -->
   <section id="faq">
     <div class="inner">
       <div class="faq-layout">
         <div class="faq-intro reveal fl">
-          <span class="slabel">Preguntas frecuentes</span>
-          <h2 class="stitle">Lo que necesitas saber antes de empezar.</h2>
+          <div class="section-title-group"><span class="slabel">Preguntas frecuentes</span>
+          <h2 class="stitle">Lo que necesitas saber antes de empezar.</h2></div>
           <p class="sbody">No necesitas llegar con una solución definida. Empezamos entendiendo el problema y te recomendamos el siguiente paso más conveniente.</p>
           <a href="#booking" class="btn-p">Cuéntanos tu caso</a>
         </div>
         <div class="faq-list reveal fr">
           <details>
             <summary>¿Cuánto cuesta desarrollar una solución?</summary>
-            <p>Depende del proceso, las integraciones y el alcance. Después del diagnóstico inicial recibirás una propuesta clara por etapas, sin costos ocultos.</p>
+            <p>Los planes web tienen un pago único de US$229 (Base), US$429 (Plus) o US$699 (Pro), según el alcance publicado. Los sistemas e integraciones a medida se cotizan después de una evaluación inicial sin costo.</p>
           </details>
           <details>
             <summary>¿Cuánto tiempo demora?</summary>
@@ -204,7 +129,7 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
           </details>
           <details>
             <summary>¿Incluyen capacitación y soporte?</summary>
-            <p>Sí. La puesta en marcha contempla acompañamiento y capacitación. El soporte posterior se define según las necesidades de cada solución.</p>
+            <p>La capacitación está incluida en Pro y se acuerda en proyectos a medida. Cada plan web indica su periodo de corrección de errores; el mantenimiento posterior se cotiza por separado.</p>
           </details>
           <details>
             <summary>¿Trabajan fuera de Arequipa?</summary>
@@ -215,18 +140,37 @@ const contactEndpoint = configuredContactEndpoint.startsWith('https://script.goo
     </div>
   </section>
 
+  <section id="results" aria-labelledby="clients-title">
+    <div class="inner clients-inner">
+      <div><div class="section-title-group"><span class="slabel">Nuestros clientes</span><h2 id="clients-title" class="stitle">Quiénes confían en Celerisys.</h2></div></div>
+      <div class="client-carousel">
+        <div class="client-track" tabindex="0" aria-label="Clientes de Celerisys"><article class="result-story client-slide">
+          <div class="story-mark">“</div>
+          <p class="tquote">Celerisys encontró la fuga en nuestra operación. En pocas semanas empezamos a recuperar miles de soles que antes se escapaban sin darnos cuenta.</p>
+          <div class="tauthor">
+            <img class="tauthor-img" src="/delypapalogo-optimized.png" width="256" height="256" loading="lazy" alt="Logo de Delypapa">
+            <div>
+              <div class="tauthor-name">Delypapa</div>
+              <div class="tauthor-role">Empresa de alimentos · Arequipa, Perú</div>
+            </div>
+          </div>
+        </article></div>
+        <div class="client-controls" hidden><button type="button" data-prev aria-label="Cliente anterior">←</button><button type="button" data-next aria-label="Cliente siguiente">→</button></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ──────── BOOKING / CALENDAR ──────── -->
   <section id="booking">
     <div class="inner">
       <div class="book-wrap">
         <div class="book-left reveal fl">
-          <span class="slabel">Contacto</span>
-          <h2 class="stitle">Cuéntanos qué quieres mejorar.</h2>
-          <p class="sbody">Explícanos brevemente tu operación y te responderemos con el siguiente paso más conveniente. Completarlo toma menos de dos minutos.</p>
+          <div class="section-title-group"><span class="slabel">Contacto</span>
+          <h2 class="stitle">Hablemos de tu proyecto.</h2></div>
+          <p class="sbody">Cuéntanos qué necesitas y déjanos tus datos. Te contactaremos para coordinar una reunión y definir el siguiente paso.</p>
           <div class="book-benefits">
             <div class="bben">Primera evaluación sin costo</div>
             <div class="bben">Respuesta personal, no automática</div>
-            <div class="bben">Sin compromiso ni llamadas innecesarias</div>
           </div>
           <div class="book-meta-box">
             <div class="book-meta-label"><span class="material-symbols-rounded" aria-hidden="true">mail</span> Respuesta directa por correo</div>
@@ -613,9 +557,9 @@ html:not(.light) .flow-stage::before { display:none; }
 
 .stitle {
   margin:6px 0 0;
-  font-size:clamp(36px,5.2vw,68px);
-  line-height:1.02;
-  letter-spacing:-.045em;
+  font-size:var(--section-title-size);
+  line-height:1.12;
+  letter-spacing:-.025em;
   text-wrap:balance;
 }
 
@@ -656,7 +600,7 @@ html:not(.light) .flow-stage::before { display:none; }
 
 .what-copy .stitle {
   max-width:620px;
-  font-size:clamp(40px,4.35vw,60px);
+  font-size:var(--section-title-size);
 }
 
 .what-copy .sbody { max-width:520px; }
@@ -1115,9 +1059,114 @@ html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
   *,*::before,*::after { animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important; }
   .flow-signal { stroke-dashoffset:0;animation:none; }
 }
+
+#what .inner,#results .inner,#faq .inner { min-height:auto; }
+.service-method { margin-top:36px;padding-top:28px;border-top:1px solid var(--border); }
+.service-method h3 { font-family:var(--font-h);font-size:19px;margin-bottom:20px; }
+.service-method ol { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;padding:0; }
+.service-method li { display:flex;gap:12px; }
+.service-method li>span { color:var(--blue-light);font-size:12px; }
+.service-method strong { font-size:14px; }
+.service-method p { margin-top:6px;color:var(--muted);font-size:13px;line-height:1.6; }
+#results .clients-inner { display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:40px;padding-top:56px;padding-bottom:56px; }
+.clients-inner .stitle { font-size:var(--section-title-size); }
+.client-carousel { min-width:0; }
+.client-track { display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;border-radius:18px; }
+.client-track:focus-visible { outline:2px solid var(--blue);outline-offset:4px; }
+.client-track .client-slide { flex:0 0 100%;box-sizing:border-box;scroll-snap-align:start;margin:0; }
+.client-controls { display:flex;justify-content:flex-end;gap:8px;margin-top:14px; }
+.client-controls[hidden] { display:none; }
+.client-controls button { width:40px;height:40px;border:1px solid var(--border);border-radius:50%;background:var(--card);color:var(--white);cursor:pointer; }
+.client-controls button:focus-visible { outline:2px solid var(--blue);outline-offset:3px; }
+@media(max-width:800px) { .service-method ol { grid-template-columns:1fr;gap:18px; } #results .clients-inner { grid-template-columns:1fr;gap:24px; } }
+
+/* Shared section heading treatment across the landing page. */
+#what .stitle, #planes .stitle, #faq .stitle, #results .stitle, #booking .stitle {
+  font-size:var(--section-title-size);
+  line-height:1.12;
+  letter-spacing:-.025em;
+  font-weight:700;
+  margin:0;
+  text-wrap:balance;
+}
+#what .slabel, #planes .slabel, #faq .slabel, #results .slabel, #booking .slabel {
+  display:block;
+  margin:0 0 12px;
+  color:var(--blue-light);
+  font-family:var(--font-h);
+  font-size:12px;
+  font-weight:600;
+  line-height:1.3;
+  letter-spacing:.08em;
+  text-transform:none;
+}
+.what-copy, .faq-intro, .book-left, .plans-heading, .clients-inner>div:first-child {
+  padding-left:0;
+}
+.what-copy::before, .faq-intro::before, .book-left::before, .plans-heading::before, .clients-inner>div:first-child::before {
+  content:none;
+}
+.section-title-group {
+  position:relative;
+  padding-left:24px;
+}
+.section-title-group::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:2px;
+  bottom:2px;
+  width:3px;
+  border-radius:999px;
+  background:linear-gradient(180deg,var(--blue),rgba(101,214,163,.85));
+}
+@media(max-width:600px) { .section-title-group { padding-left:18px; } }
+
+
+/* Refine the existing process graphic without changing the hero. */
+.flow-stage { container-type:inline-size;border-radius:24px;box-shadow:0 18px 44px rgba(0,0,0,.2); }
+.flow-stage::before { width:360px;top:60px;opacity:.45; }
+.flow-card { width:23.333%;height:24.49%;padding:12px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.18); }
+.flow-request { top:12.245%;left:5%; }
+.flow-validation { top:12.245%;left:38.333%;width:23.333%; }
+.flow-team { top:12.245%;left:71.667%;width:23.333%; }
+.flow-system { top:57.143%;left:71.667%;width:23.333%; }
+.flow-report { top:57.143%;left:38.333%;right:auto;width:23.333%; }
+.flow-card strong { min-width:0;max-width:100%;font-size:clamp(10px,2.6cqi,16px);line-height:1.2;letter-spacing:-.02em;overflow-wrap:anywhere;hyphens:auto; }
+html[lang="pt"] .flow-card strong { font-size:clamp(9.5px,2.15cqi,14px); }
+.flow-card small { font-size:clamp(6px,.55vw,8px);line-height:1.4;font-weight:600;letter-spacing:.045em;margin-top:6px; }
+.flow-index { color:#8ab8ff;font-size:10px;font-weight:600; }
+.flow-icon { top:12px;right:12px;width:25px;height:25px;border-radius:7px; }
+.flow-icon svg { width:15px;height:15px; }
+.flow-signal { color:#6ca7ff;stroke:#6ca7ff;stroke-width:2;stroke-dasharray:160;stroke-dashoffset:160; }
+.flow-outcome-mark { width:6px;height:6px;top:10px;right:10px;box-shadow:0 0 0 3px rgba(101,214,163,.12); }
+.flow-caption { bottom:24px;font-size:7px;font-weight:600;letter-spacing:.075em;line-height:1.6; }
+html.light .flow-stage { box-shadow:0 16px 40px rgba(8,27,51,.1);border-color:rgba(22,119,255,.14); }
+html.light .flow-card { background:#fff;border-color:rgba(11,33,53,.1);box-shadow:0 6px 16px rgba(8,27,51,.08); }
+html.light .flow-index { color:#0967c2; }
+html.light .flow-card small { color:#5c718a; }
+html.light .flow-signal { color:#2977d5;stroke:#2977d5; }
+@media(max-width:767px) {
+  .flow-stage { min-height:0;padding:22px 20px 55px;gap:10px; }
+  .flow-card,.flow-validation,.flow-team,.flow-system,.flow-report { position:relative;top:auto;left:auto;right:auto;width:100%;height:auto;min-height:82px;padding:14px 16px 14px 52px;justify-content:center; }
+  .flow-card strong, html[lang="pt"] .flow-card strong { margin-top:0;font-size:16px; }
+  .flow-card small { font-size:9px;max-width:calc(100% - 34px); }
+  .flow-index { position:absolute;left:16px;top:19px; }
+  .flow-icon { top:27px;right:14px; }
+  .flow-caption { bottom:16px; }
+}
+
+/* Remove ornamental textures; keep the established layout and blue accent. */
+#hero #hbg,html.light #hero #hbg { background:var(--surface); }
+.flow-stage::before,html.light .flow-stage::before { content:none; }
+#results,html.light #results { background:var(--surface2); }
+.flow-stage,html.light .flow-stage { box-shadow:0 12px 32px rgba(8,27,51,.08); }
+.flow-caption::before,.flow-caption::after { content:none; }
+.flow-caption { justify-content:center; }
 </style>
 
 <script is:inline>
+  const uiText = (text) => window.celerisysText?.(text) || text;
   const contactForm = document.getElementById('contact-form');
   const contactButton = contactForm?.querySelector('.contact-submit');
   const contactStatus = contactForm?.querySelector('.contact-status');
@@ -1139,11 +1188,11 @@ html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
 
   const validationMessage = (field) => {
     const value = field.value.trim();
-    if (field.required && !value) return 'Completa este campo para continuar.';
-    if (field.name === 'name' && value.length < 2) return 'Escribe al menos 2 caracteres.';
-    if (field.name === 'email' && field.validity.typeMismatch) return 'Ingresa un correo válido, por ejemplo nombre@empresa.com.';
-    if (field.name === 'phone' && value && !/^[+0-9() .-]{7,24}$/.test(value)) return 'Usa un número válido, por ejemplo +51 999 999 999.';
-    if (field.name === 'message' && value.length < 20) return 'Cuéntanos un poco más: usa al menos 20 caracteres.';
+    if (field.required && !value) return uiText('Completa este campo para continuar.');
+    if (field.name === 'name' && value.length < 2) return uiText('Escribe al menos 2 caracteres.');
+    if (field.name === 'email' && field.validity.typeMismatch) return uiText('Ingresa un correo válido, por ejemplo nombre@empresa.com.');
+    if (field.name === 'phone' && value && !/^[+0-9() .-]{7,24}$/.test(value)) return uiText('Usa un número válido, por ejemplo +51 999 999 999.');
+    if (field.name === 'message' && value.length < 20) return uiText('Cuéntanos un poco más: usa al menos 20 caracteres.');
     return '';
   };
 
@@ -1210,15 +1259,14 @@ html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
     if (!endpoint) {
       if (contactStatus instanceof HTMLElement) {
         contactStatus.dataset.state = 'error';
-        contactStatus.textContent = 'El formulario todavía no está conectado. Por favor, escríbenos por WhatsApp.';
+        contactStatus.textContent = uiText('El formulario todavía no está conectado. Por favor, escríbenos por WhatsApp.');
       }
       return;
     }
 
-    const senderName = contactForm.querySelector('[name="name"]')?.value.trim() || '';
     if (contactButton instanceof HTMLButtonElement) {
       contactButton.disabled = true;
-      contactButton.textContent = 'Enviando…';
+      contactButton.textContent = uiText('Enviando…');
     }
     if (contactStatus instanceof HTMLElement) contactStatus.textContent = '';
     window.dispatchEvent(new CustomEvent('celerisys:conversion', {
@@ -1243,7 +1291,7 @@ html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
       });
       if (contactStatus instanceof HTMLElement) {
         contactStatus.dataset.state = 'success';
-        contactStatus.textContent = `Gracias${senderName ? `, ${senderName}` : ''}. Recibimos tu solicitud y también te enviamos una confirmación por correo.`;
+        contactStatus.textContent = uiText('Solicitud enviada. Te responderemos por correo.');
       }
       window.dispatchEvent(new CustomEvent('celerisys:conversion', {
         detail: { action: 'contact-form-success' }
@@ -1251,13 +1299,30 @@ html.light .flow-report .flow-icon { background:rgba(101,214,163,.12); }
     } catch {
       if (contactStatus instanceof HTMLElement) {
         contactStatus.dataset.state = 'error';
-        contactStatus.textContent = 'No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos por WhatsApp.';
+        contactStatus.textContent = uiText('No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos por WhatsApp.');
       }
     } finally {
       if (contactButton instanceof HTMLButtonElement) {
         contactButton.disabled = false;
-        contactButton.textContent = 'Solicitar evaluación gratuita';
+        contactButton.textContent = uiText('Solicitar evaluación gratuita');
       }
     }
+  });
+</script>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.client-carousel').forEach((carousel) => {
+    const track = carousel.querySelector<HTMLElement>('.client-track');
+    const controls = carousel.querySelector<HTMLElement>('.client-controls');
+    if (!track || !controls || track.children.length < 2) return;
+    controls.hidden = false;
+    const move = (direction: number) => {
+      const step = (track.firstElementChild?.getBoundingClientRect().width ?? track.clientWidth) + 20;
+      const max = track.scrollWidth - track.clientWidth;
+      const destination = track.scrollLeft + direction * step;
+      track.scrollTo({ left: destination < -1 ? max : destination > max + 1 ? 0 : destination, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    };
+    carousel.querySelector('[data-prev]')?.addEventListener('click', () => move(-1));
+    carousel.querySelector('[data-next]')?.addEventListener('click', () => move(1));
   });
 </script>

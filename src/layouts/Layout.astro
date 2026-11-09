@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { homeFor, locales, localeFromPath, translate } from '../i18n/translations';
 
 interface Props {
   title: string;
@@ -16,17 +17,26 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const locale = localeFromPath(Astro.url.pathname);
+const pagePath = Astro.url.pathname.replace(/^\/(en|pt)(?=\/|$)/, '').replace(/\/$/, '') || '/';
+const hasTranslations = pagePath === '/' || pagePath === '/privacidad';
+const isHome = pagePath === '/';
+const canonicalURL = new URL(isHome ? homeFor(locale) : Astro.url.pathname.replace(/\/$/, ''), Astro.site ?? Astro.url.origin);
+const alternateFor = (language: 'es' | 'en' | 'pt') => new URL(homeFor(language) + (pagePath === '/privacidad' ? 'privacidad' : ''), Astro.site ?? Astro.url.origin);
+const messageKeys = ['Completa este campo para continuar.', 'Escribe al menos 2 caracteres.', 'Ingresa un correo válido, por ejemplo nombre@empresa.com.', 'Usa un número válido, por ejemplo +51 999 999 999.', 'Cuéntanos un poco más: usa al menos 20 caracteres.', 'El formulario todavía no está conectado. Por favor, escríbenos por WhatsApp.', 'Enviando…', 'No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos por WhatsApp.', 'Solicitud enviada. Te responderemos por correo.', 'Solicitar evaluación gratuita', 'Abrir menú', 'Cerrar menú'];
+const clientMessages = Object.fromEntries(messageKeys.map(key => [key, translate(key, locale)]));
 const socialImageURL = new URL(image, Astro.site ?? Astro.url.origin);
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Celerisys",
+  "@id": "https://info.celerisys.com/#organization",
   url: "https://info.celerisys.com",
   logo: "https://info.celerisys.com/svg/c.svg",
-  description: "Software a medida y automatización de procesos para empresas peruanas.",
+  description: translate("Software a medida y automatización de procesos para empresas peruanas.", locale),
   email: "celerisys@outlook.com",
   telephone: "+51935875743",
+  contactPoint: { "@type": "ContactPoint", telephone: "+51935875743", email: "celerisys@outlook.com", contactType: "sales" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Arequipa",
@@ -37,10 +47,26 @@ const organizationSchema = {
     "https://www.tiktok.com/@celerisys",
   ],
 };
+const webPageSchema = {
+  "@context": "https://schema.org", "@type": "WebPage", "@id": `${canonicalURL}#webpage`,
+  url: canonicalURL.toString(), name: translate(title, locale), description: translate(description, locale), inLanguage: locale,
+  about: { "@id": "https://info.celerisys.com/#organization" },
+};
+const serviceSchema = {
+  "@context": "https://schema.org", "@type": "Service",
+  name: translate('Webs, sistemas y automatizaciones para tu negocio.', locale),
+  serviceType: ['Website development', 'Custom software development', 'Process automation'],
+  provider: { "@id": "https://info.celerisys.com/#organization" }, areaServed: { "@type": "Country", name: 'Peru' },
+  hasOfferCatalog: { "@type": "OfferCatalog", name: translate('Planes web', locale), itemListElement: [
+    { "@type": "Offer", price: '229', priceCurrency: 'USD', url: `${canonicalURL}#planes`, itemOffered: { "@type": "Service", name: translate('Plan Base', locale), description: translate('Una página con hasta 6 secciones', locale) } },
+    { "@type": "Offer", price: '429', priceCurrency: 'USD', url: `${canonicalURL}#planes`, itemOffered: { "@type": "Service", name: translate('Plan Plus', locale), description: translate('Hasta 5 páginas adaptadas a tu marca', locale) } },
+    { "@type": "Offer", price: '699', priceCurrency: 'USD', url: `${canonicalURL}#planes`, itemOffered: { "@type": "Service", name: translate('Plan Pro', locale), description: translate('Hasta 8 páginas adaptadas a tu marca', locale) } },
+  ] },
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,8 +76,11 @@ const organizationSchema = {
     <meta name="theme-color" content="#050506" />
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonicalURL} />
+    {hasTranslations && locales.map(language => <link rel="alternate" hreflang={language} href={alternateFor(language)} />)}
+    {hasTranslations && <link rel="alternate" hreflang="x-default" href={alternateFor('es')} />}
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_PE" />
+    <meta property="og:locale" content={{es: 'es_PE', en: 'en_US', pt: 'pt_BR'}[locale]} />
+    {hasTranslations && locales.filter(language => language !== locale).map(language => <meta property="og:locale:alternate" content={{es: 'es_PE', en: 'en_US', pt: 'pt_BR'}[language]} />)}
     <meta property="og:site_name" content="Celerisys" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -67,6 +96,11 @@ const organizationSchema = {
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Sans:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
     <title>{title}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    {isHome && <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}
+    <script is:inline define:vars={{ clientMessages }}>
+      window.celerisysText = (text) => clientMessages[text] || text;
+    </script>
     <script is:inline>
       // Initialize theme on page load
       (function() {
@@ -89,9 +123,17 @@ const organizationSchema = {
   </body>
 </html>
 
+<script>
+  import '../scripts/navigation';
+</script>
+
 <style is:global>
+.language-suggestion { position:fixed;z-index:110;bottom:20px;left:20px;display:flex;align-items:center;gap:16px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);box-shadow:var(--page-shadow);font-size:13px; }
+.language-suggestion a { color:var(--white);text-underline-offset:4px; }
+.language-suggestion button { background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;padding:0 4px; }
 :root {
   --nav-height:70px;
+  --section-title-size:clamp(28px,3vw,36px);
   --blue: #6ca7ff;
   --blue2: #397bd8;
   --blue-light: #9bc5ff;
